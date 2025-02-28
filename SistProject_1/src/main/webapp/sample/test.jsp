@@ -27,11 +27,30 @@
 </style>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
+function btnClick(){
+	// 기존 .btn-sm 버튼 클릭 이벤트 (원본 이벤트)
+    $(document).on('click', '.btn-sm', function(){
+        let $btn = $(this);
+        let $pwdRow = $btn.closest('.table').find('.pwd');
+
+        // 현재 버튼의 상태 확인 (data 사용)
+        let isVisible = $btn.data('visible') || false;
+
+        if (!isVisible) {
+            $pwdRow.show("slow");
+            $btn.val('취소').data('visible', true);
+        } else {
+            $pwdRow.hide("slow");
+            $btn.val('삭제').data('visible', false);
+        }
+    });
+}
 $(function(){
     // 처음에 비밀번호 숨기기
     $('.table .pwd').hide();
+    btnClick()
 
-    // 기존 .btn-sm 버튼 클릭 이벤트 (원본 이벤트)
+/*     // 기존 .btn-sm 버튼 클릭 이벤트 (원본 이벤트)
     $('.btn-sm').on('click', function(){
         let $btn = $(this);
         let $pwdRow = $btn.closest('.table').find('.pwd');
@@ -47,13 +66,13 @@ $(function(){
             $btn.val('삭제').data('visible', false);
         }
     });
-
+ */
     // 복사본 만들기
     //let copiedHtml = $('.container').clone().html();
     let copiedHtml = $('.container').html();
     $('.copy').html(copiedHtml);
 
-    // 복사된 요소에도 이벤트 적용 (동적 바인딩)
+/*     // 복사된 요소에도 이벤트 적용 (동적 바인딩)
     $('.copy').on('click', '.btn-sm', function(){
         let $btn = $(this);
         let $pwdRow = $btn.closest('.table').find('.pwd');
@@ -67,7 +86,7 @@ $(function(){
             $pwdRow.hide("slow");
             $btn.val('삭제').data('visible', false);
         }
-    });
+    }); */
 });
 </script>
 </head>
