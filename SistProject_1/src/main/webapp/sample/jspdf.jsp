@@ -31,7 +31,7 @@ function convertHTMLToPDF(){
 	    doc.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
 	    doc.save("sample.pdf");
 	});
-}
+} 
 </script>
 <script type="text/javascript">
 function btnClick(){
