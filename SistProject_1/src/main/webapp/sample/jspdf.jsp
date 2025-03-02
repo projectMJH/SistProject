@@ -41,7 +41,7 @@ function btnClick(){
         let $pwdRow = $btn.closest('.table').find('.pwd');
 
         // 현재 버튼의 상태 확인 (data 사용)
-        let isVisible = $btn.data('visible') || false;
+        let isVisible = $btn.data('visible') || false; 
 
         if (!isVisible) {
             $pwdRow.show("slow");
