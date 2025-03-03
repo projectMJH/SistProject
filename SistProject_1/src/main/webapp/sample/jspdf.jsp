@@ -18,7 +18,9 @@
 </style>
 <script src="../js/htmlparser.js"></script>
 <script src="../js/html2json.js"></script>
+<!-- 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/3.2.0/json2html.min.js"></script>
+ --> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script type="text/javascript" src="../js/jquery.js"></script>
