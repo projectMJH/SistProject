@@ -1,110 +1,194 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-<title>Ã¤¿ë Á¤º¸¿Í ±â¾÷ ¸®ºä¸¦ ÇÑ ¹ø¿¡! | ÀâÇÃ·¡´Ö</title>
-
 
 <head>
-<meta charSet="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=2.0,user-scalable=yes"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/material/media/11391/img_pcr_off.svg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/material/media/3910/naver.svg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/material/media/3911/ytube.svg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/105484/cropped_medium_%EA%B8%B0%EC%97%85%EB%A1%9C%EA%B3%A0%EB%8C%80.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/material/media/11913/img_ic_w_0213.svg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114712/cropped_medium_%EB%9D%BC%EC%9A%B4%EC%A7%801_%EC%95%95%EC%B6%95_500kb.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116035/cropped_medium_%EB%A9%94%EC%9D%B8.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116187/cropped_medium_%EC%9B%85%EC%A7%84.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115986/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115485/cropped_medium_%EC%97%A0%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C.png"/>
-<link rel="stylesheet" href="/_next/static/css/be42fed4221d4a91.css" data-precedence="next"/>
-<link rel="stylesheet" href="/_next/static/css/52ead27f17eaf8bc.css" data-precedence="next"/>
-<link rel="stylesheet" href="/_next/static/css/ec37b2c29e7530af.css" data-precedence="next"/>
-<link rel="stylesheet" href="/_next/static/css/482c067fd410a0e4.css" data-precedence="next"/>
-<link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-b4dcd5a84104347a.js"/>
-<script src="/_next/static/chunks/fd9d1056-e4ddb6466759daf1.js" async=""></script>
-<script src="/_next/static/chunks/7023-7c1dd739e4150292.js" async=""></script>
-<script src="/_next/static/chunks/main-app-55bbd77d79f9187f.js" async=""></script>
-<script src="/_next/static/chunks/2818-02c34ecad83cd0c8.js" async=""></script>
-<script src="/_next/static/chunks/8472-a21367c0e56f1e57.js" async=""></script>
-<script src="/_next/static/chunks/9183-65b385bf9c1115da.js" async=""></script>
-<script src="/_next/static/chunks/7138-5a83d5306b3101f7.js" async=""></script>
-<script src="/_next/static/chunks/4288-6c37601370870a8b.js" async=""></script>
-<script src="/_next/static/chunks/335-0cb0cf2ba76640bf.js" async=""></script>
-<script src="/_next/static/chunks/434-1b04c6fc3ff32b12.js" async=""></script>
-<script src="/_next/static/chunks/7004-aacffdd26700a98b.js" async=""></script>
-<script src="/_next/static/chunks/app/layout-ff90bbc4139155d6.js" async=""></script>
-<script async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-<script src="/_next/static/chunks/4674-5792ece1ef9d174e.js" async=""></script>
-<script src="/_next/static/chunks/5784-efd0b9cc8ae0f006.js" async=""></script>
-<script src="/_next/static/chunks/4577-cff9913e57aff4e6.js" async=""></script>
-<script src="/_next/static/chunks/3061-53b226f810f0f8af.js" async=""></script>
-<script src="/_next/static/chunks/1495-a683b931e2352242.js" async=""></script>
-<script src="/_next/static/chunks/9225-931b0e5429f866a8.js" async=""></script>
-<script src="/_next/static/chunks/app/job/page-b6b4216c09eb6149.js" async=""></script>
-<script src="/_next/static/chunks/app/error-6c42e3e9011c5f2f.js" async=""></script>
-<script src="/_next/static/chunks/app/not-found-c92a1e7f4faae5c4.js" async=""></script>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116332/cropped_medium_%EC%8B%A0%EC%84%B1%ED%86%B5%EC%83%81%20_1_.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115845/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/100454/cropped_medium_cropped_medium_%EC%95%84%EC%A3%BC%ED%81%90%EC%97%A0%EC%97%90%EC%8A%A4.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115989/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/105305/cropped_medium_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A9%94%EC%9D%B4%EC%BB%A4%20_3_.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116057/cropped_medium__%EC%A3%BC_%EB%9E%98%EB%B8%8C%EB%9D%BC%EB%8F%84%EB%9E%A9%EC%8A%A4.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/112756/cropped_medium_%ED%8C%A8%EC%8A%A4%ED%8A%B8%EB%B7%B0.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115441/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B%20%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0%20%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115268/cropped_medium_IMG_9455.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114790/cropped_medium_%EC%B1%84%EC%9A%A9%20%EA%B3%B5%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115440/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B%20%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0%20%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg"/>
-<link rel="preload" href="https://developers.kakao.com/sdk/js/kakao.min.js" as="script"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/material/media/11942/band_banner_2.png"/>
-<link rel="preload" as="image" href="https://common.jobplanet.co.kr/images/ssrimg/common/jp_wordmark_green.svg"/>
-<link rel="preload" as="image" href="https://common.jobplanet.co.kr/images/ssrimg/common/membership_default.png"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/cv/profile_image/file/181346/m.jpg"/>
-<link rel="preload" as="image" href="https://jpassets.jobplanet.co.kr/production/uploads/material/media/6123/img_recog.png"/>
-<meta name="apple-mobile-web-app-title" content="JOBPLANET"/>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta name="mobile-web-app-capable" content="yes"/>
-<meta name="naver-site-verification" content="92797ec98d02ea3104090f549a9317e7b86b9a7b"/>
-<meta name="facebook-domain-verification" content="eu1usx6mb8zx4k02f27w8dabp4wdb9"/>
-<link rel="apple-touch-icon" sizes="57x57" href="&quot;https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-57x57.png&quot;"/>
-<link rel="apple-touch-icon" sizes="60x60" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-60x60.png"/>
-<link rel="apple-touch-icon" sizes="72x72" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-72x72.png"/>
-<link rel="apple-touch-icon" sizes="76x76" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-76x76.png"/>
-<link rel="apple-touch-icon" sizes="114x114" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-114x114.png"/>
-<link rel="apple-touch-icon" sizes="120x120" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-120x120.png"/>
-<link rel="apple-touch-icon" sizes="144x144" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-144x144.png"/>
-<link rel="apple-touch-icon" sizes="152x152" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-152x152.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="https://common.jobplanet.co.kr/images/ssrimg/root/apple-icon-180x180.png"/>
-<link rel="icon" type="image/png" sizes="192x192" href="https://common.jobplanet.co.kr/images/ssrimg/root/android-icon-192x192.png"/>
-<link rel="icon" type="image/png" sizes="32x32" href="https://common.jobplanet.co.kr/images/ssrimg/root/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="96x96" href="https://common.jobplanet.co.kr/images/ssrimg/root/favicon-96x96.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="https://common.jobplanet.co.kr/images/ssrimg/root/favicon-16x16.png"/>
-<meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
-<meta name="theme-color" content="#ffffff"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta name="description" content="Ãë¾÷ÃàÇÏ±İ 100¸¸¿ø, AI ÃßÃµ Ã¤¿ë°ø°í, ¿¬ºÀÁ¤º¸, ±â¾÷ºñ±³, ±â¾÷ Àü¹® ´º½º, ±â¾÷¸®ºä, ¸éÁ¢ÈÄ±â±îÁö Ä¿¸®¾î ¿©Á¤À» ÀâÇÃ·¡´Ö¿¡¼­ ½ÃÀÛÇÏ¼¼¿ä."/>
-<meta name="keywords" content="Ã¤¿ë°ø°í, Ã¤¿ëÁ¤º¸, ´ë±â¾÷Ã¤¿ë, Áß°ß±â¾÷Ã¤¿ë, Áß¼Ò±â¾÷Ã¤¿ë, ½ºÅ¸Æ®¾÷Ã¤¿ë, Ãë¾÷»çÀÌÆ®, »ó¹İ±âÃ¤¿ë, ÇÏ¹İ±âÃ¤¿ë, ±â¾÷¿¬ºÀ, ±â¾÷Á¤º¸, ±¸ÀÎ±¸Á÷»çÀÌÆ®"/>
-<meta name="branch:deeplink:$deeplink_path" content="jobplanet://main/jobposting"/>
-<meta name="jp_next_ok" content="true"/>
-<script src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js" noModule=""></script>
-<script>
-window["__RQ:R1fkq:"] = window["__RQ:R1fkq:"] || [];window["__RQ:R1fkq:"]
-.push({"mutations":[],"queries":[{"state":{"data":{"user":{"user_id":6144575,"name":"1001moon","email":"1001moon@hanafos.com","facebook_connected":false,"kakao_connected":false,"is_student":true,"review_count":0,"salary_count":0,"interview_count":0,"welfare_review_count":0,"has_review_auth":false,"has_salary_auth":false,"has_interview_auth":false,"has_welfare_review_auth":false,"additional_info_submitted":true,"current_signup_flow_stage":0,"career_center_allowed":false,"confirmed":true,"occupation_status":"done","signup_flow_done":true,"univ_info_updated":false,"fresh_notification_count":null,"is_alri_auth":false,"is_promotion_target_user":false,"profile_image_url":"https://jpassets.jobplanet.co.kr/production/uploads/cv/profile_image/file/181346/m.jpg","is_confirm_email":true,"last_visit_at":"2025.02.26 05:49","is_business_account":false,"business_account_permission":null,"is_admin":false},"membership_info":{"membership":"none","subscription":false,"paySource":""},"user_info":{"join_year_month":"2025/2","join_day":18,"day_after_join":7,"state":"student","membership":"none","locale":null,"birthdate":"1966/07/05","user_stats":{"review":0,"salary":0,"interview":0,"content":0,"follow":1,"occupation":0,"job_saved":0,"job_apply":0,"job_searchcon":0,"push":0,"salary_amount":0,"industry":0},"job_intention":"no_job_intention"},"dimensions":[{"key":"dimension0","value":"6144575"},{"key":"dimension1","value":"2025/2"},{"key":"dimension2","value":"0"},{"key":"dimension3","value":"7"},{"key":"dimension4","value":"student"},{"key":"dimension5","value":"000"},{"key":"dimension6","value":"0"},{"key":"dimension7","value":"0"},{"key":"dimension8","value":"0"},{"key":"dimension9","value":"0"},{"key":"dimension10","value":"1"},{"key":"dimension11","value":"0"},{"key":"dimension12","value":"0"},{"key":"dimension13","value":"0"},{"key":"dimension14","value":"0"},{"key":"dimension15","value":"0"},{"key":"dimension16","value":"0"},{"key":"dimension17","value":"0"},{"key":"dimension18","value":"none"}],"analytics_properties":{"privilege":["none"],"is_business_account":false,"is_branding":false,"company_id":null},"is_admin":false},"dataUpdateCount":1,"dataUpdatedAt":1740526925529,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["user","info"],"queryHash":"[\"user\",\"info\"]"},{"state":{"data":[{"id":17,"sort_id":3,"view_type":"ads_posting","section_name":"recommended_jobposting_list","title":"¹®Á¾È£´ÔÀ» À§ÇÑ ÃßÃµ °ø°í","category":"personalize_job_postings","link_url":"","deep_link":"","list_items":[{"id":1278736,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/105484/cropped_medium_%EA%B8%B0%EC%97%85%EB%A1%9C%EA%B3%A0%EB%8C%80.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/105484/cropped_low_%EA%B8%B0%EC%97%85%EB%A1%9C%EA%B3%A0%EB%8C%80.jpg","title":"Back Office °³¹ßÀÚ","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":2,"maximum_years":0,"text":"°æ·Â"},"recruitment_text":["2³â ÀÌ»ó"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["aws","Php","MYSQL","PostgreSQL","ubuntu","github"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":324399,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/324399/thumb_daily_new_symbol_blank_150.png","name":"(ÁÖ)µ¥ÀÏ¸®Æİµù","grade":4.3,"grade_count":33,"city_name":"¼­¿ï","is_branding":false},"start_at":"2024-12-12","end_at":"2025-03-12","created_at":"2024-06-07T15:33:34.000+09:00","updated_at":"2024-12-12T17:30:11.000+09:00","review_summaries":{"id":324399,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1287343,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114712/cropped_medium_%EB%9D%BC%EC%9A%B4%EC%A7%801_%EC%95%95%EC%B6%95_500kb.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114712/cropped_low_%EB%9D%BC%EC%9A%B4%EC%A7%801_%EC%95%95%EC%B6%95_500kb.jpg","title":"devops °³¹ßÀÚ","occupation_names":{"level1":["°³¹ß"],"level2":["¹é¿£µå °³¹ß","À¥°³¹ß","Å¬¶ó¿ìµå °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[4],"years":0,"maximum_years":0,"text":"°æ·Â¹«°ü"},"recruitment_text":["°æ·Â¹«°ü"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["aws","Linux","devops","Cloud","Å¬¶ó¿ìµå","Docker","Kubernetes"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":397468,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/397468/thumb_%EC%9D%B4%EA%B7%B8%EB%A0%88%EB%B8%8C.png","name":"ÀÌ±×·¹ºê","grade":5,"grade_count":2,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-01-08","end_at":"2025-04-08","created_at":"2025-01-08T21:12:57.000+09:00","updated_at":"2025-01-09T12:10:02.000+09:00","review_summaries":{"id":397468,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288617,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116035/cropped_medium_%EB%A9%94%EC%9D%B8.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116035/cropped_low_%EB%A9%94%EC%9D%B8.jpg","title":"Web Frontend DevOps Engineer","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":3,"maximum_years":10,"text":"°æ·Â"},"recruitment_text":["3 ~ 10³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["react"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":89631,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/89631/thumb_RIDI%20Wordmark%20Basic_Blue__2x.png","name":"¸®µğ(ÁÖ)","grade":3.3,"grade_count":432,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-02-10","end_at":"2025-05-09","created_at":"2025-02-10T15:09:01.000+09:00","updated_at":"2025-02-10T16:10:02.000+09:00","review_summaries":{"id":89631,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288767,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116187/cropped_medium_%EC%9B%85%EC%A7%84.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116187/cropped_low_%EC%9B%85%EC%A7%84.png","title":"MS Power Platform Project Leader","occupation_names":{"level1":["°³¹ß"],"level2":["¼ÒÇÁÆ®¿ş¾î °³¹ß","À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":10,"maximum_years":20,"text":"°æ·Â"},"recruitment_text":["10 ~ 20³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["BI","½Ã½ºÅÛºĞ¼®","RPA"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"D-10","company":{"id":61210,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/61210/thumb_wj_logo4.JPG","name":"(ÁÖ)¿õÁø","grade":3.1,"grade_count":321,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-02-12","end_at":"2025-03-08","created_at":"2025-02-12T15:12:37.000+09:00","updated_at":"2025-02-12T21:40:02.000+09:00","review_summaries":{"id":61210,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288568,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115986/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115986/cropped_low_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png","title":"[Catalyst] ¼Ò¼È ¸®½º´× Àü¹®°¡ (ÄÁ¼³ÅÏÆ®)","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":5,"maximum_years":12,"text":"°æ·Â"},"recruitment_text":["5 ~ 12³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"subscription","posting_apply_type":"jobplanet","skills":["µ¥ÀÌÅÍ¿£Áö´Ï¾î","µ¥ÀÌÅÍ»çÀÌ¾ğÆ¼½ºÆ®","µ¥ÀÌÅÍºĞ¼®°¡","µ¥ÀÌÅÍ¶óº§¸µ"],"reward":0,"reward_text":"","reward_type_text":"»çÀÌ´× º¸³Ê½º","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":90944,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/90944/thumb_CNX_2024Logo_c.png","name":"ÄÜ¼¾Æ®¸¯½º¼­ºñ½ºÄÚ¸®¾Æ(À¯)","grade":2.5,"grade_count":875,"city_name":"¼­¿ï","is_branding":true},"start_at":"2025-02-10","end_at":"2025-05-11","created_at":"2025-02-10T11:11:06.000+09:00","updated_at":"2025-02-10T16:10:02.000+09:00","review_summaries":{"id":90944,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288098,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115485/cropped_medium_%EC%97%A0%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115485/cropped_low_%EC%97%A0%EC%A7%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C.png","title":"[MGµ¥ÀÌÅÍ½Ã½ºÅÛ]2025³â °è¾àÁ÷(»ç¾÷Àå) °æ·ÂÁ÷ »ó½ÃÃ¤¿ë -(»õ¸¶¿Ã±İ°í º¹ÁöÈ¸ ÅëÇÕÀ¯Áöº¸¼ö) ÇÁ·Î±×·¥ À¯Áöº¸¼ö","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß","¼ÒÇÁÆ®¿ş¾î °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":3,"maximum_years":8,"text":"°æ·Â"},"recruitment_text":["3 ~ 8³â"],"job_type":"°è¾àÁ÷","posting_type":"subscription","posting_apply_type":"outlink","skills":["java","jsp","Spring","Javascript"],"reward":0,"reward_text":"","reward_type_text":"»çÀÌ´× º¸³Ê½º","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":450209,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/450209/thumb_MG%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%B8%EB%A1%9C%ED%98%95-%EA%B8%B0%EB%B3%B82.png","name":"(ÁÖ)¿¥Áöµ¥ÀÌÅÍ½Ã½ºÅÛ","grade":4.6,"grade_count":10,"city_name":"¼­¿ï","is_branding":true},"start_at":"2025-01-23","end_at":"2025-04-23","created_at":"2025-01-23T16:23:42.000+09:00","updated_at":"2025-01-23T17:10:58.000+09:00","review_summaries":{"id":450209,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288906,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116332/cropped_medium_%EC%8B%A0%EC%84%B1%ED%86%B5%EC%83%81%20_1_.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116332/cropped_low_%EC%8B%A0%EC%84%B1%ED%86%B5%EC%83%81%20_1_.png","title":"½Å¼ºÅë»ó(ÁÖ) WEB °³¹ßÀÚ °æ·ÂÁ÷ Ã¤¿ë","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß","ÇÁ·ĞÆ®¿£µå °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":3,"maximum_years":12,"text":"°æ·Â"},"recruitment_text":["3 ~ 12³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["java","aws","Ä¿¸Ó½º","PostgreSQL","CI/CD"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":24570,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/24570/thumb_20190402_130646.png","name":"½Å¼ºÅë»ó(ÁÖ)","grade":2.7,"grade_count":689,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-02-14","end_at":"2025-05-15","created_at":"2025-02-14T12:05:09.000+09:00","updated_at":"2025-02-14T12:47:07.000+09:00","review_summaries":{"id":24570,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288444,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115845/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115845/cropped_low_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png","title":"[Catalyst] ½Ã°¢È­ °³¹ßÀÚ","occupation_names":{"level1":["°³¹ß"],"level2":["¼ÒÇÁÆ®¿ş¾î °³¹ß","À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":5,"maximum_years":10,"text":"°æ·Â"},"recruitment_text":["5 ~ 10³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"subscription","posting_apply_type":"jobplanet","skills":["python","aws","SQL","gcp","µ¥ÀÌÅÍ ½Ã°¢È­"],"reward":0,"reward_text":"","reward_type_text":"»çÀÌ´× º¸³Ê½º","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":90944,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/90944/thumb_CNX_2024Logo_c.png","name":"ÄÜ¼¾Æ®¸¯½º¼­ºñ½ºÄÚ¸®¾Æ(À¯)","grade":2.5,"grade_count":875,"city_name":"¼­¿ï","is_branding":true},"start_at":"2025-02-07","end_at":"2025-05-08","created_at":"2025-02-05T16:51:21.000+09:00","updated_at":"2025-02-07T18:20:02.000+09:00","review_summaries":{"id":90944,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1273628,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/100454/cropped_medium_cropped_medium_%EC%95%84%EC%A3%BC%ED%81%90%EC%97%A0%EC%97%90%EC%8A%A4.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/100454/cropped_low_cropped_medium_%EC%95%84%EC%A3%BC%ED%81%90%EC%97%A0%EC%97%90%EC%8A%A4.png","title":"Java °³¹ßÀÚ(Ã¥ÀÓ±Ş)","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß","¼ÒÇÁÆ®¿ş¾î °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":7,"maximum_years":12,"text":"°æ·Â"},"recruitment_text":["7 ~ 12³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["java","Spring framework","Javascript","j-query"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":317471,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/317471/thumb_20150710%20AJU%20QMS.jpg","name":"¾ÆÁÖÅ¥¿¥¿¡½º(ÁÖ)","grade":2.6,"grade_count":67,"city_name":"¼­¿ï","is_branding":false},"start_at":"2024-04-15","end_at":"2025-04-10","created_at":"2024-04-15T15:14:23.000+09:00","updated_at":"2025-01-10T10:40:37.000+09:00","review_summaries":{"id":317471,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}},{"id":1288571,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115989/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115989/cropped_low_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B1.png","title":"[Catalyst] AEM ±â¹İ (À¥ ¿î¿µ or °³¹ß)","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":1,"maximum_years":15,"text":"°æ·Â"},"recruitment_text":["1 ~ 15³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"subscription","posting_apply_type":"jobplanet","skills":["¹é¿£µå","SI","¹İÀÀÇüÀ¥"],"reward":0,"reward_text":"","reward_type_text":"»çÀÌ´× º¸³Ê½º","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":90944,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/90944/thumb_CNX_2024Logo_c.png","name":"ÄÜ¼¾Æ®¸¯½º¼­ºñ½ºÄÚ¸®¾Æ(À¯)","grade":2.5,"grade_count":875,"city_name":"¼­¿ï","is_branding":true},"start_at":"2025-02-10","end_at":"2025-05-11","created_at":"2025-02-10T11:25:25.000+09:00","updated_at":"2025-02-10T16:10:02.000+09:00","review_summaries":{"id":90944,"total_text":"Á¾ÇÕ","pros_text":"ÀåÁ¡","cons_text":"´ÜÁ¡"}}]}],"dataUpdateCount":1,"dataUpdatedAt":1740526925662,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["job","dashboard"],"queryHash":"[\"job\",\"dashboard\"]"},{"state":{"data":{"user_signed_in":{"signed_in":true,"path":"/users/sign_in"},"items":{"link":"/profile/resumes","profile_image":"https://jpassets.jobplanet.co.kr/production/uploads/cv/profile_image/file/181346/m.jpg","name":"¹®Á¾È£","job_experience":"½ÅÀÔ","occupation_level2":"À¥°³¹ß","profile_level":5,"job_intentions":[{"id":"none","value":"","name":"±¸Á÷ ÁßÀÌ½Å°¡¿ä?","desc":"","selected":false},{"id":"big_job_intention","value":"big_job_intention","name":"ÇöÀç ±¸Á÷ ÁßÀÌ¿¡¿ä","desc":"´ëÇ¥ ÀÌ·Â¼­ °ø°³ »óÅÂÀÔ´Ï´Ù. Á¦ÀÏ ¸ÕÀú Æ÷Áö¼ÇÀ» Á¦¾È ¹Ş°Ô µË´Ï´Ù","selected":false},{"id":"little_job_intention","value":"little_job_intention","name":"±¸Á÷ »ı°¢Àº ¾øÁö¸¸ Á¦¾È¸¸ ¹ŞÀ»°Ô¿ä","desc":"´ëÇ¥ ÀÌ·Â¼­ °ø°³ »óÅÂÀÔ´Ï´Ù. Æ÷Áö¼Ç Á¦¾ÈÀ» ¹ŞÀ» ¼ö ÀÖ½À´Ï´Ù","selected":false},{"id":"no_job_intention","value":"no_job_intention","name":"±¸Á÷ »ı°¢µµ ¾ø°í Á¦¾Èµµ ¾È ¹ŞÀ»·¡¿ä","desc":"ÀÌ·Â¼­ ºñ°ø°³ »óÅÂÀÔ´Ï´Ù. Æ÷Áö¼Ç Á¦¾ÈÀ» ¹ŞÀ» ¼ö ¾ø½À´Ï´Ù","selected":true}],"select_job_intention":{"id":"no_job_intention","value":"no_job_intention","name":"±¸Á÷ »ı°¢µµ ¾ø°í Á¦¾Èµµ ¾È ¹ŞÀ»·¡¿ä","desc":"ÀÌ·Â¼­ ºñ°ø°³ »óÅÂÀÔ´Ï´Ù. Æ÷Áö¼Ç Á¦¾ÈÀ» ¹ŞÀ» ¼ö ¾ø½À´Ï´Ù","selected":true},"enabled_preference_category":true,"guide":["°£´ÜÇÑ ÀÚ±â¼Ò°³"]}},"dataUpdateCount":1,"dataUpdatedAt":1740526925219,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["job","profile"],"queryHash":"[\"job\",\"profile\"]"},{"state":{"data":{"pages":[{"total_count":60,"recruits":[{"id":1278563,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/105305/cropped_medium_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A9%94%EC%9D%B4%EC%BB%A4%20_3_.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/105305/cropped_low_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A9%94%EC%9D%B4%EC%BB%A4%20_3_.png","title":"ML Engineer","occupation_names":{"level1":["°³¹ß"],"level2":["³×Æ®¿öÅ©/º¸¾È/¿î¿µ","¼ÒÇÁÆ®¿ş¾î °³¹ß","À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":3,"maximum_years":15,"text":"°æ·Â"},"recruitment_text":["3 ~ 15³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["python","Linux","machine learning","Deep Learning","Tensorflow"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"D-8","company":{"id":371446,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/371446/thumb_%EA%B8%B0%EC%97%85%EB%A1%9C%EA%B3%A0_%EC%95%84%EC%9D%B4%EC%BD%98.png","name":"(ÁÖ)µ¥ÀÌÅÍ¸ŞÀÌÄ¿","grade":3.3,"grade_count":44,"city_name":"´ëÀü","is_branding":false},"start_at":"2025-02-12","end_at":"2025-03-06","created_at":"2024-06-05T10:41:20.000+09:00","updated_at":"2025-02-12T10:24:18.000+09:00"},{"id":1288637,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116057/cropped_medium__%EC%A3%BC_%EB%9E%98%EB%B8%8C%EB%9D%BC%EB%8F%84%EB%9E%A9%EC%8A%A4.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/116057/cropped_low__%EC%A3%BC_%EB%9E%98%EB%B8%8C%EB%9D%BC%EB%8F%84%EB%9E%A9%EC%8A%A4.png","title":"¼­ºñ½º ¿£Áø °³¹ßÀÚ (5³âÀÌ»ó~10³âÀÌÇÏ)","occupation_names":{"level1":["°³¹ß"],"level2":["¹é¿£µå °³¹ß","À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":5,"maximum_years":10,"text":"°æ·Â"},"recruitment_text":["5 ~ 10³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["java","MYSQL","spring boot","REDIS","¿ÀÇÂ¼Ò½º"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"D-33","company":{"id":407014,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/407014/thumb__%EC%A3%BC_%EB%9E%98%EB%B8%8C%EB%9D%BC%EB%8F%84%EB%9E%A9%EC%8A%A4.png","name":"(ÁÖ)·¡ºê¶óµµ·¦½º","grade":0,"grade_count":0,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-02-11","end_at":"2025-03-31","created_at":"2025-02-11T10:54:31.000+09:00","updated_at":"2025-02-11T11:38:04.000+09:00"},{"id":1285470,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/112756/cropped_medium_%ED%8C%A8%EC%8A%A4%ED%8A%B8%EB%B7%B0.png","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/112756/cropped_low_%ED%8C%A8%EC%8A%A4%ED%8A%B8%EB%B7%B0.png","title":"ÁÖ´Ï¾î Ç®½ºÅÃ ¿£Áö´Ï¾î","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":3,"maximum_years":5,"text":"°æ·Â"},"recruitment_text":["3 ~ 5³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["kotlin","python","MYSQL","react","git","spring boot","node","typescript","aurora","Next.js"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":345005,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/345005/thumb_%EB%A1%9C%EA%B3%A0%EB%B3%80%ED%98%95.jpg","name":"(ÁÖ)ÆĞ½ºÆ®ºä","grade":2.9,"grade_count":168,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-02-14","end_at":"2025-05-15","created_at":"2024-11-13T14:25:02.000+09:00","updated_at":"2025-02-14T16:06:47.000+09:00"},{"id":1287343,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114712/cropped_medium_%EB%9D%BC%EC%9A%B4%EC%A7%801_%EC%95%95%EC%B6%95_500kb.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114712/cropped_low_%EB%9D%BC%EC%9A%B4%EC%A7%801_%EC%95%95%EC%B6%95_500kb.jpg","title":"devops °³¹ßÀÚ","occupation_names":{"level1":["°³¹ß"],"level2":["¹é¿£µå °³¹ß","À¥°³¹ß","Å¬¶ó¿ìµå °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[4],"years":0,"maximum_years":0,"text":"°æ·Â¹«°ü"},"recruitment_text":["°æ·Â¹«°ü"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["aws","Linux","devops","Cloud","Å¬¶ó¿ìµå","Docker","Kubernetes"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":397468,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/397468/thumb_%EC%9D%B4%EA%B7%B8%EB%A0%88%EB%B8%8C.png","name":"ÀÌ±×·¹ºê","grade":5,"grade_count":2,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-01-08","end_at":"2025-04-08","created_at":"2025-01-08T21:12:57.000+09:00","updated_at":"2025-01-09T12:10:02.000+09:00"},{"id":1288054,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115441/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B%20%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0%20%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115441/cropped_low_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B%20%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0%20%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg","title":"À¯´ÏÆ¼/Unity ¿£Áø °ÔÀÓ°³¹ß °úÁ¤ ±³°­»ç(Á¤±ÔÁ÷)","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß","°ÔÀÓ°³¹ß","¾Èµå·ÎÀÌµå °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[4],"years":0,"maximum_years":0,"text":"°æ·Â¹«°ü"},"recruitment_text":["°æ·Â¹«°ü"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["Unity","°ÔÀÓ","°ÔÀÓ°³¹ß"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":354045,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/354045/thumb_%EB%A1%9C%EA%B3%A0.jpg","name":"(ÁÖ)°æÀÏ°ÔÀÓ¾ÆÀÌÆ¼¾ÆÄ«µ¥¹Ì","grade":3.5,"grade_count":42,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-01-22","end_at":"2025-04-22","created_at":"2025-01-22T18:01:55.000+09:00","updated_at":"2025-01-23T09:20:02.000+09:00"},{"id":1280347,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115268/cropped_medium_IMG_9455.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115268/cropped_low_IMG_9455.jpg","title":"ÇÁ·ĞÆ®¿£µå °³¹ß (ºí·ÏÃ¼ÀÎ/Web3Áö°©)","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß","¼ÒÇÁÆ®¿ş¾î °³¹ß","ÇÁ·ĞÆ®¿£µå °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":3,"maximum_years":10,"text":"°æ·Â"},"recruitment_text":["3 ~ 10³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["Javascript","react","node.js","React Native","vue","typescript","Vue.js","HTML CSS","github","vscode"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":336152,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/336152/thumb_iotrust-logomark-gradient-colored-orange.png","name":"(ÁÖ)¾ÆÀÌ¿ÀÆ®·¯½ºÆ®","grade":3.6,"grade_count":5,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-01-17","end_at":"2025-04-17","created_at":"2024-07-02T14:36:32.000+09:00","updated_at":"2025-01-20T10:43:03.000+09:00"},{"id":1287418,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114790/cropped_medium_%EC%B1%84%EC%9A%A9%20%EA%B3%B5%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/114790/cropped_low_%EC%B1%84%EC%9A%A9%20%EA%B3%B5%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg","title":"À¥(web) °³¹ßÀÚ","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":5,"maximum_years":10,"text":"°æ·Â"},"recruitment_text":["5 ~ 10³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["git","typescript","gcp","firebase","swagger","Vue3"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":411990,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/411990/thumb_%ED%95%98%EC%9D%B4%20%EB%A1%9C%EA%B3%A0%20%EB%A6%AC%EB%89%B4%EC%96%BC%20%EB%B2%84%EC%A0%84_%EC%8B%AC%EB%B3%BC.png","name":"(ÁÖ)ÇÏÀÌ","grade":3.4,"grade_count":8,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-01-09","end_at":"2025-04-09","created_at":"2025-01-09T17:53:11.000+09:00","updated_at":"2025-01-10T08:40:02.000+09:00"},{"id":1288053,"bookmark":false,"image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115440/cropped_medium_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B%20%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0%20%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg","low_image":"https://jpassets.jobplanet.co.kr/production/uploads/job/posting_cover_image/file/115440/cropped_low_%EC%9E%A1%ED%94%8C%EB%9E%98%EB%8B%9B%20%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0%20%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg","title":"¾ğ¸®¾ó/Unreal ¿£Áø °ÔÀÓ°³¹ß °úÁ¤ ±³°­»ç(Á¤±ÔÁ÷)","occupation_names":{"level1":["°³¹ß"],"level2":["À¥°³¹ß","°ÔÀÓ°³¹ß","¾Èµå·ÎÀÌµå °³¹ß"]},"is_fit_messages":false,"fee":"7%","job_applicant_type":"user","annual":{"type":[2],"years":1,"maximum_years":6,"text":"°æ·Â"},"recruitment_text":["1 ~ 6³â"],"job_type":"Á¤±ÔÁ÷","posting_type":"recruitment","posting_apply_type":"jobplanet","skills":["°ÔÀÓ","°ÔÀÓ°³¹ß","unreal","Unreal Engine"],"reward":1000000,"reward_text":"100¸¸¿ø","reward_type_text":"Ãë¾÷ ÃàÇÏ±İ","deadline_message":"»ó½Ã Ã¤¿ë","company":{"id":354045,"logo":"https://jpassets.jobplanet.co.kr/production/uploads/company/logo/354045/thumb_%EB%A1%9C%EA%B3%A0.jpg","name":"(ÁÖ)°æÀÏ°ÔÀÓ¾ÆÀÌÆ¼¾ÆÄ«µ¥¹Ì","grade":3.5,"grade_count":42,"city_name":"¼­¿ï","is_branding":false},"start_at":"2025-01-22","end_at":"2025-04-22","created_at":"2025-01-22T17:57:20.000+09:00","updated_at":"2025-01-22T18:10:03.000+09:00"}]}],"pageParams":[1]},"dataUpdateCount":1,"dataUpdatedAt":1740526925601,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["job","recruitments",{"occupation_level1":"","occupation_level2":"11604","years_of_experience":"","review_score":"","job_type":"","city":"","education_level_id":"","order_by":"aggressive"}],"queryHash":"[\"job\",\"recruitments\",{\"city\":\"\",\"education_level_id\":\"\",\"job_type\":\"\",\"occupation_level1\":\"\",\"occupation_level2\":\"11604\",\"order_by\":\"aggressive\",\"review_score\":\"\",\"years_of_experience\":\"\"}]"},{"state":{"data":"is-banner","dataUpdateCount":0,"dataUpdatedAt":1740526925669,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["getPadding",true],"queryHash":"[\"getPadding\",true]"}]});
-</script>
-<style data-styled="" data-styled-version="6.1.13">
-.gQfLNu{padding-top:113px;}/*!sc*/
-.gQfLNu.is-banner{padding-top:165px;}/*!sc*/
-.gQfLNu.promotion{padding-top:0;}/*!sc*/
-data-styled.g1[id="sc-3b1d4a4b-0"]{content:"gQfLNu,"}/*!sc*/
-</style>
+    <!-- Title -->
+    <title>Recipe & Food & Travel</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="../css/responsive/responsive.css" rel="stylesheet">
+
 </head>
-<body>
 
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="yummy-load"></div>
+    </div>
+    <!-- Background Pattern Swither -->
+    <div id="pattern-switcher">
+        ì‹¤ì‹œê°„ ìƒë‹´
+    </div>
+    <div id="patter-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+
+
+    <!-- ****** Welcome Post Area Start ****** -->
+    
+    <jsp:include page="../main/header.jsp"></jsp:include>
+    
+    <jsp:include page="../main/home.jsp"></jsp:include>
+    
+    <!-- *************** Cookie *****************  -->
+    <!-- ****** Instagram Area Start ****** -->
+    <div class="instargram_area owl-carousel section_padding_100_0 clearfix" id="portfolio">
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/1.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/2.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/3.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/4.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/5.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/6.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/1.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="../img/instagram-img/2.jpg" alt="">
+            <!-- Hover -->
+            <div class="hover_overlay">
+                <div class="yummy-table">
+                    <div class="yummy-table-cell">
+                        <div class="follow-me text-center">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- ****** Our Creative Portfolio Area End ****** -->
+
+    <jsp:include page="../main/footer.jsp"></jsp:include>
+
+    <!-- Jquery-2.2.4 js -->
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="../js/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="../js/active.js"></script>
 </body>
-</html>

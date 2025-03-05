@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 <style type="text/css">
 .container{
     margin-top: 50px;
 }
 .row{
     margin: 0px auto;
-    width: 350px;
+    width: 350px; 
 }
 /*
     id / class 구분이 없는 경우
