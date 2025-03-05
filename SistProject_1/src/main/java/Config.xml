@@ -26,6 +26,6 @@
   </environments>
   <!-- SQL문장 첨부 -->
   <mappers>
-    <mapper resource=""/>
+    <mapper resource="com/sist/mapper/food-mapper.xml"/>
   </mappers>
 </configuration>
