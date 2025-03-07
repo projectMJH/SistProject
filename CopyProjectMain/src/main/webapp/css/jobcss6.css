@@ -1,0 +1,608 @@
+@charset "UTF-8";
+.jply_main_dark0 {
+	color: #00a85d
+}
+
+.jply_main {
+	color: #00c362
+}
+
+.jply_main_light0 {
+	color: #2fdd78
+}
+
+.jply_main_light1 {
+	color: #7ef2a9
+}
+
+.jply_main_light2 {
+	color: #d9ffe6
+}
+
+.jply_sub_dark0 {
+	color: #0994ff
+}
+
+.jply_sub {
+	color: #40b6ff
+}
+
+.jply_gr0 {
+	color: #323438
+}
+
+.jply_gr1 {
+	color: #4b4c50
+}
+
+.jply_gr2 {
+	color: #686a6d
+}
+
+.jply_gr3 {
+	color: #85878c
+}
+
+.jply_gr4 {
+	color: #c5c7cc
+}
+
+.jply_gr5 {
+	color: #e5e6e9
+}
+
+.jply_gr6 {
+	color: #f3f3f4
+}
+
+.jply_red {
+	color: #ff5757
+}
+
+.jply_orange {
+	color: #ffa22b
+}
+
+.jply_purple {
+	color: #8a74ed
+}
+
+.home .body_wrap {
+	background-color: #f3f3f4
+}
+
+#contents_wrap_new {
+	padding-top: 60px
+}
+
+#contents_wrap_new .jpcont_col1 {
+	position: relative;
+	width: 1060px;
+	border: 0 none
+}
+
+.jply_con_wrap {
+	position: relative;
+	background: transparent
+}
+
+.jply_con_panel {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-bottom: 60px;
+	box-sizing: border-box
+}
+
+.top_title_area, .top_button_area {
+	max-width: 48.75%
+}
+
+.sub_title_g500 {
+	display: block;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 28px;
+	color: #686a6d
+}
+
+.sub_text_g500 {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 21px;
+	color: #686a6d
+}
+
+.more_link {
+	color: #00c362;
+	text-decoration: underline
+}
+
+.grid_masonry_layout {
+	display: block;
+	width: 1084px;
+	position: relative;
+	margin-left: -12px;
+	margin-right: -12px
+}
+
+.grid_masonry_layout:after {
+	display: block;
+	content: '';
+	clear: both
+}
+
+.grid_masonry_layout .item-content {
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+
+.grid_masonry_layout .grid_item {
+	display: block;
+	width: 361px;
+	height: 200px;
+	padding: 0 12px;
+	margin-top: 24px;
+	box-sizing: border-box;
+	background: transparent;
+	float: left
+}
+
+.grid_masonry_layout .grid_item.mtp_w2 {
+	width: 722px
+}
+
+.grid_masonry_layout .grid_item.mtp_h2 {
+	height: 424px
+}
+
+.grid_masonry_layout .grid_item:nth-of-type(even).mtp_h2 {
+	float: right
+}
+
+.grid_masonry_layout .grid_item:first-of-type, .grid_masonry_layout .grid_item:nth-of-type(2)
+	{
+	margin-top: 0
+}
+
+.jply_grid_masonry_card {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 200px;
+	border-radius: 12px;
+	background-color: #fff
+}
+
+.jply_grid_masonry_card:hover .text_wrap, .jply_grid_masonry_card:focus .text_wrap
+	{
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1),
+		rgba(0, 0, 0, 0.7))
+}
+
+.jply_grid_masonry_card .img_thumb {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%
+}
+
+.jply_grid_masonry_card .img_thumb img {
+	width: 100%;
+	height: 100%
+}
+
+.jply_grid_masonry_card .text_wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5))
+}
+
+.jply_grid_masonry_card .text_box {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 24px;
+	box-sizing: border-box;
+	color: #fff
+}
+
+.jply_grid_masonry_card .sub_title {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	font-size: 13px;
+	line-height: 21px;
+	opacity: 0.7;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: nowrap
+}
+
+.jply_grid_masonry_card .title {
+	overflow: hidden;
+	display: block;
+	max-height: 56px;
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: bold;
+	color: #fff;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	word-break: keep-all
+}
+
+.mtp_w2 .jply_grid_masonry_card .title, .mtp_h2 .jply_grid_masonry_card .title
+	{
+	max-height: 67.2px;
+	font-size: 24px;
+	line-height: 33.6px
+}
+
+.jply_content_card_ty2 {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border-radius: 12px;
+	background-color: #fff
+}
+
+.jply_content_card_ty2 .jply_comp_bottom {
+	width: 100%;
+	padding: 0 32px 32px;
+	margin-top: auto;
+	box-sizing: border-box
+}
+
+.jply_content_card_ty2 .jply_comp_bottom .jply_button_group {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between
+}
+
+.jply_content_card_ty2 .content_box {
+	width: 100%;
+	padding: 32px;
+	box-sizing: border-box
+}
+
+.jply_content_card_ty2 .jp-quote {
+	display: inline-block;
+	height: 32px;
+	margin-bottom: 8px;
+	font-size: 32px;
+	color: #e5e6e9
+}
+
+.jply_content_card_ty2 .jply_icon ~ .title {
+	margin-top: 8px
+}
+
+.jply_content_card_ty2 .title {
+	overflow: hidden;
+	display: block;
+	max-height: 99px;
+	margin-bottom: 12px;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 33px;
+	color: #323438;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word
+}
+
+.jply_content_card_ty2 .about_company {
+	margin-bottom: 12px
+}
+
+.jply_content_card_ty2 .info {
+	vertical-align: middle;
+	display: inline-block;
+	height: 19px;
+	line-height: 1.4;
+	font-size: 15px;
+	color: #a4a6ad
+}
+
+.jply_content_card_ty2 .card_btn {
+	width: calc(50% - 4px);
+	height: auto;
+	margin: 0
+}
+
+.jply_content_card_ty2 .card_btn:only-of-type {
+	width: 100%
+}
+
+.jply_content_card_ty2 .card_btn:nth-of-type(n+3) {
+	margin-top: 8px
+}
+
+.company_star {
+	position: relative;
+	display: inline-block;
+	width: 96px;
+	height: 16px;
+	background:
+		url("https://jpassets.jobplanet.co.kr/production/uploads/material/media/1026/ic_star_off.png")
+		no-repeat 0 0;
+	background-size: 100% 100%
+}
+
+.company_star .company_star_average {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 16px;
+	background:
+		url("https://jpassets.jobplanet.co.kr/production/uploads/material/media/1025/ic_star_on.png")
+		no-repeat 0 0;
+	background-size: 96px 16px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden
+}
+
+.jply_text_btn_banner {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border-radius: 12px;
+	background-color: #fff
+}
+
+.jply_text_btn_banner .wrap {
+	display: flex;
+	flex-direction: row;
+	align-items: center
+}
+
+.jply_text_btn_banner .jply_comp_body {
+	width: 70%;
+	box-sizing: border-box
+}
+
+.jply_text_btn_banner .jply_comp_bottom {
+	flex: auto;
+	padding: 32px;
+	box-sizing: border-box;
+	text-align: right
+}
+
+.jply_text_btn_banner .content_box {
+	box-sizing: border-box;
+	padding: 32px
+}
+
+.jply_text_btn_banner .title {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.4;
+	color: #323438
+}
+
+.job_tag_list:after {
+	display: block;
+	clear: both;
+	content: ''
+}
+
+.job_tag_list .tag_item {
+	float: left;
+	margin-top: 12px;
+	margin-right: 12px
+}
+
+.job_tag_list .gray50 {
+	background-color: #f3f3f4;
+	border-color: #f3f3f4;
+	color: #85878c
+}
+
+.jply_wing_bn_comp {
+	position: absolute;
+	top: 72px;
+	right: -144px;
+	border-radius: 12px
+}
+
+.jply_wing_bn_comp .wing_bn_item {
+	width: 120px;
+	height: 150px;
+	margin-top: 12px
+}
+
+.jply_wing_bn_comp .wing_bn_item:first-of-type {
+	margin-top: 0
+}
+
+.jply_wing_bn_comp .bn_img_wrap {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 12px
+}
+
+.jply_wing_bn_comp .bn_img_wrap img {
+	max-width: 100%;
+	max-height: 100%
+}
+
+.jp_content_banner_item {
+	overflow: hidden;
+	display: block;
+	width: 518px;
+	height: 120px;
+	text-align: center
+}
+
+.jp_content_banner_item img {
+	width: 100%;
+	height: 100%;
+	vertical-align: top
+}
+
+.jply_jp_ad_comp .swiper-container {
+	overflow: visible
+}
+
+.jply_company_review_comp ~ .jply_button_group {
+	margin-top: 32px
+}
+
+.after_login .jply_con_panel.goodjobweb {
+	min-height: 330px
+}
+
+.before_login .jply_con_panel.goodjobweb {
+	min-height: 112px
+}
+
+.salaries_write_page {
+	background: #fff;
+	min-height: fit-content
+}
+
+.salaries_write_page .body_wrap {
+	padding-top: 0
+}
+
+.salaries_write_page .ba_logo_wrap, .salaries_write_page .globalHeaderWrap,
+	.salaries_write_page .footer {
+	display: none
+}
+
+.wizard_page_interview .header_flash {
+	background-color: #fff3e0;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #57595b;
+	text-align: center;
+	font-weight: 500
+}
+
+.wizard_page_interview .detail_header {
+	margin-bottom: 24px
+}
+
+.wizard_page_interview .wizard_content_old {
+	width: 716px
+}
+
+.wizard_page_interview .interview_contents_warp {
+	position: relative;
+	width: 716px;
+	margin: 0 auto
+}
+
+.wizard_page_interview .interview_guide {
+	width: 280px;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	margin-left: 15px
+}
+
+.wizard_page_interview .interview_guide .tit {
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	line-height: 1em
+}
+
+.wizard_page_interview .interview_guide .txt {
+	display: block;
+	font-size: 13px;
+	line-height: 1.5em;
+	font-weight: normal;
+	color: #444
+}
+
+.wizard_page_interview .interview_guide ol {
+	padding: 0 20px;
+	background: #fff
+}
+
+.wizard_page_interview .interview_guide ol li {
+	display: block;
+	margin: 20px 0
+}
+
+.wizard_page_interview .interview_guide ol li:last-child {
+	margin-bottom: 0;
+	padding-bottom: 20px
+}
+
+.wizard_page_interview .interview_guide ol li .tit {
+	display: block;
+	margin: 10px 0;
+	font-size: 13px;
+	line-height: 1.5em;
+	font-weight: bold;
+	color: #444
+}
+
+.wizard_page_interview .interview_guide .main {
+	background: #fff;
+	margin-bottom: 20px
+}
+
+.wizard_page_interview .interview_guide h3 {
+	padding: 20px 20px 0 20px
+}
+
+.wizard_page_interview .interview_guide .etc {
+	padding: 20px;
+	background: #fff
+}
+
+.wizard_page_interview .interview_guide ul {
+	display: block;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #bbb
+}
+
+.wizard_page_interview .interview_guide ul .tit {
+	display: block;
+	font-size: 13px;
+	line-height: 1.5em;
+	font-weight: normal;
+	color: #444
+}
+
+.wizard_page_interview .interview_guide ul .txt {
+	display: block;
+	font-size: 13px;
+	line-height: 1.5em;
+	font-weight: normal;
+	color: #999
+}
+
+.wizard_page_interview .interview_guide .border_none {
+	border-bottom: 0
+}
