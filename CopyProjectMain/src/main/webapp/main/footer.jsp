@@ -8,7 +8,7 @@
 </head>
 <body>
 	<!-- Bottom Background Image Wrapper -->
-	<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+	<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');"> 
 	  <div class="wrapper row4">
 	    <footer id="footer" class="hoc clear"> 
 	      <hr class="btmspace-50">
