@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.company-mapper">
+	<select id="companyMainHouseData" resultType="CompanyVO">
+		SELECT * FROM (SELECT * FROM company
+		ORDER BY DBMS_RANDOM.RANDOM)
+		WHERE rownum&lt;=1
+	</select>
+	<select id="companyListData" resultType="CompanyVO" parameterType="hashmap">
+	   SELECT TO_NUMBER(SUBSTR(cid, 2)) AS cid_int,name,poster,estdate,c_type,ecount,address,num
+	   FROM (SELECT cid,name,poster,estdate,c_type,ecount,address,rownum as num 
+	   FROM (SELECT cid,name,poster,estdate,c_type,ecount,address
+	   FROM company ORDER BY cid ASC))
+	   WHERE num BETWEEN #{start} AND #{end}
+	</select>
+	
+</mapper>

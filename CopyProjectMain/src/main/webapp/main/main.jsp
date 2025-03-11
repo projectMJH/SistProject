@@ -8,33 +8,74 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="../shadow/css/shadowbox.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
+Shadowbox.init({
+    players:['iframe']
+})
 $(function(){
 	//document.getElementById('login').addEventListener("click", function() {
 	$('#msgbar').text("");
-	$('#div_login #login').on("click", function() { 	
+	$('#login').on("click", function() { 	
  		//let id=document.getElementById('id').value.trim();
 		//let pwd=document.getElementById('pwd').value.trim();
- 		let id=$('#id').val().trim();
-		let pwd=$('#pwd').val().trim();
-		if(id!=="") 
+ 		let email=$('#email').val().trim();
+		let pw=$('#pw').val().trim();
+		if(email!=="") 
 		{
-			if(pwd==="")
+			if(pw==="")
 			{
 				$('#msgbar').text("비밀번호를 입력하세요");
-				//document.getElementById('pwd').focus()
-				$('#pwd').focus()
+				//document.getElementById('pw').focus()
+				$('#pw').focus()
 				return
 			}
-			$('#msgbar').text('id: '+id+',  password: '+pwd)
-			sessionStorage.setItem("id",id)
+			
+	        $.ajax({
+	        	type:'post',
+	        	url:'../member/login_ok.do',
+	        	data:{"email":email,"pw":pw},
+	        	success:function(result){
+	        		// NOID, NOPWD, OK
+	        		if(result==='NOID')
+	        		{
+	        			$('#msgbar').text("아이디가 존재하지 않습니다")
+	        			$('#email').val("")
+	        			$('#pw').val("")
+	        			$('#email').focus()
+	        		}	
+	        		else if(result==='NOPWD')
+	        		{
+	        			$('#msgbar').text("비밀번호가 틀립니다")
+	                    $('#pw').val("")
+	                    $('#pw').focus()
+	        		}	
+	        		else
+	        		{
+	                    parent.location.href="../main/main.do"
+	        			parent.Shadowbox.close()
+	        		}	
+	        	}
+	        })
+	      /*   
+	        $('#msgbar').text('email: '+email+',  password: '+pw)
+			sessionStorage.setItem("email",email)
 			if(id==='148cl0ud@gmail.com')
 			{
 				sessionStorage.setItem("admin",'y')
 			}	
-		}	
- 	});
+	        */ 
+		}
+	})
+	$('#logout').click(function(){
+		location.href="../member/logout.do"
+	})
+	$('#signup').click(function(){
+		location.href="../member/join.do"
+	})
+
 })
 </script>
 </head>
@@ -47,19 +88,19 @@ $(function(){
 	        <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
 	      </ul>
 	    </div>
-	    <div id="div_login" style="display: flex; flex-direction: column; align-items: flex-end;">
+	    <div style="display: flex; flex-direction: column; align-items: flex-end;">
 	    	<c:if test="${sessionScope.id==null }">
 	    	<div style="display: flex; align-items: center; gap: 5px;">
-			<input type="text" id="id" placeholder="Enter e-mail" size=12 style="color:black;">
-			<input type="password" id="pwd" placeholder="Enter password" size=12 style="color:black;">
+			<input type="text" id="email" placeholder="이메일 입력" size=25 style="color:black;">
+			<input type="password" id="pw" placeholder="비밀번호 입력" size=12 style="color:black;">
 			<input type="button" value="로그인" id="login" class="btn-sm btn-success">
 			<input type="button" value="회원가입" id="signup" class="btn-sm btn-primary">
 			</div>
-			<div id="msgbar" style="color: red; font-size: 14px; text-align: left; width: 400px;"></div>
+			<div id="msgbar" style="color: red; font-size: 14px; text-align: left; width: 500px;"></div>
 			</c:if>
 	    	<c:if test="${sessionScope.id!=null }">
 			<div style="display: flex; align-items: center; gap: 5px;">
-	    	${sessionScope.name }(${sessionScope.admin=='y'?"관리자":"일반사용자" }) 님 로그인되었습니다.&nbsp;&nbsp;
+	    	${sessionScope.name }${sessionScope.isadmin==1?"(관리자)":"" } 님이 로그인 되었습니다.&nbsp;&nbsp;
 			<input type="button" value="로그아웃" id="logout" class="btn-sm btn-success">
 			</c:if>
 			</div>
