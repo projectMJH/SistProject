@@ -12,27 +12,27 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class PersonalModel {
-	@RequestMapping("personal/join.do")
-	public String personal_join(HttpServletRequest request,HttpServletResponse response)
+public class OfficialModel {
+	@RequestMapping("official/join.do")
+	public String official_join(HttpServletRequest request,HttpServletResponse response)
 	{
-		request.setAttribute("main_jsp","../personal/join.jsp");
+		request.setAttribute("main_jsp","../official/join.jsp");
 		return "../main/main.jsp";
 	}
-	@RequestMapping("personal/emailcheck.do") 
-	public String personal_emailcheck(HttpServletRequest request,HttpServletResponse response)
+	@RequestMapping("official/emailcheck.do") 
+	public String official_emailcheck(HttpServletRequest request,HttpServletResponse response)
 	{
 		// include
-		return "../personal/emailcheck.jsp";
+		return "../official/emailcheck.jsp";
 	}
-	@RequestMapping("personal/emailcheck_ok.do")
-	public void personal_idcheck_ok(HttpServletRequest request,HttpServletResponse response)
+	@RequestMapping("official/emailcheck_ok.do")
+	public void official_idcheck_ok(HttpServletRequest request,HttpServletResponse response)
 	{
 		// void => 일반 데이터 (String , int)
 		// => JSON
 		// data:{"id":id.trim()} ?id=aaa
 		String email=request.getParameter("email");
-		int count=PersonalDAO.personalIdcheck(email);
+		int count=OfficialDAO.officialIdcheck(email);
 		
 		try 
 		{
@@ -42,52 +42,44 @@ public class PersonalModel {
 		}catch(Exception ex){}
 		
 	}
-	@RequestMapping("personal/join_ok.do")
-	public String personal_join_ok(HttpServletRequest request,HttpServletResponse response)
+	@RequestMapping("official/join_ok.do")
+	public String official_join_ok(HttpServletRequest request,HttpServletResponse response)
 	{
 		String pw=request.getParameter("pw");
 		String name=request.getParameter("name");
-		String sex=request.getParameter("sex");
-		String birth=request.getParameter("birth");
 		String email=request.getParameter("email");
-		String addr1=request.getParameter("addr1");
-		String addr2=request.getParameter("addr2");
 		String phone1=request.getParameter("phone1");
 		String phone2=request.getParameter("phone2");
 		
-		PersonalVO vo=new PersonalVO();
+		OfficialVO vo=new OfficialVO();
 		vo.setPw(pw);
 		vo.setName(name);
-		vo.setSex(sex);
-		vo.setBirth(birth);
 		vo.setEmail(email);
-		vo.setAddr1(addr1);
-		vo.setAddr2(addr2);
 		vo.setPhone(phone1+"-"+phone2);
-		PersonalDAO.personalInsert(vo);
+		OfficialDAO.officialInsert(vo);
 				
 		return "redirect:../main/main.do";
 	}
-	@RequestMapping("personal/login.do") 
-	public String personal_login(HttpServletRequest request,HttpServletResponse response) 
+	@RequestMapping("official/login.do") 
+	public String official_login(HttpServletRequest request,HttpServletResponse response) 
 	{
-		return "../personal/login.jsp";
+		return "../official/login.jsp";
 	}
-	@RequestMapping("personal/login_ok.do")
-	public void personal_login_ok(HttpServletRequest request,HttpServletResponse response)
+	@RequestMapping("official/login_ok.do")
+	public void official_login_ok(HttpServletRequest request,HttpServletResponse response)
 	{
 		String email=request.getParameter("email");
 		String pw=request.getParameter("pw");
-		PersonalVO vo=PersonalDAO.personalLogin(email, pw);
+		OfficialVO vo=OfficialDAO.officialLogin(email, pw);
 		if(vo.getMsg().equals("OK"))
 		{
 			HttpSession session=request.getSession();
-			session.setAttribute("id", vo.getId());
+			session.setAttribute("cid", vo.getCid());
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("email", email);
-			session.setAttribute("sex", vo.getSex());
-			session.setAttribute("isadmin", vo.getIsadmin());
-			// post, addr1, addr2
+			session.setAttribute("state", vo.getState());
+			session.setAttribute("access_key", vo.getAccess_key());
+			// phone, brnumber,state
 		}
 		try
 		{
@@ -97,11 +89,12 @@ public class PersonalModel {
 		}catch(Exception ex) {}
 	}
 	//로그아웃
-	@RequestMapping("personal/logout.do")
-	public String personal_logout(HttpServletRequest request,HttpServletResponse response)
+	@RequestMapping("official/logout.do")
+	public String official_logout(HttpServletRequest request,HttpServletResponse response)
 	{
 		HttpSession session=request.getSession();
 		session.invalidate();
 		return "redirect:../main/main.do";
 	}
+
 }

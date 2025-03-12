@@ -20,6 +20,6 @@ ISADMIN            NOT NULL NUMBER
 
 import lombok.Data;
 @Data
-public class MemberVO {
+public class PersonalVO {
 	private String id,pw,email,name,sex,birth,addr1,addr2,phone,isadmin,msg;
 }

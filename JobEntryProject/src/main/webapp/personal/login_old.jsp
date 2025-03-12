@@ -61,7 +61,8 @@ $(function(){
 </head>
 <body>
     <div class="container" style="margin-top: 50px;">
-        <div class="row" style="width: 340px">
+        <div class="row">
+      <!--   <div class="row" style="width: 340px"> -->
             <table class="table">
                 <tr>
                     <th width=20%>Email</th>

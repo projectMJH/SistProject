@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.official-mapper">
+  <select id="officialIdcheck" resultType="int" parameterType="string">
+      SELECT COUNT(*) FROM official
+      WHERE email=#{email}
+  </select>
+  <insert id="officialInsert" parameterType="OfficialVO">
+      <selectKey keyProperty="id" resultType="String" order="BEFORE">
+        SELECT 'p' || official_list_seq.NEXTVAL FROM DUAL
+      </selectKey>
+      INSERT INTO official (id,pw,email,name,sex,phone,birth,addr1,addr2,isadmin) VALUES(
+          #{id},#{pw},#{email},#{name},#{sex},#{phone},#{birth},
+          #{addr1},#{addr2},0
+      )
+  </insert>
+  <!-- 로그인 -->
+  <select id="officialIdCheckCount" resultType="int" parameterType="string">
+      SELECT COUNT(*) FROM official
+      WHERE email=#{email} 
+  </select>
+  <select id="officialGetPassword" resultType="OfficialVO" parameterType="string">
+      SELECT id,pw,name,sex,isadmin
+      FROM official
+      WHERE email=#{email}
+  </select></mapper> 

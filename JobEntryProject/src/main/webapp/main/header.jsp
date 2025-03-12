@@ -89,13 +89,13 @@
  		  	<c:if test="${sessionScope.id==null }">
 		        <div id="sign" class="navbar-nav ms-auto p-4 p-lg-0">
 			        <a href="javascript:login()" class="btn btn-primary">로그인</a>
-			        <a href="../member/join.do" class="btn btn-primary">회원가입</a>
+			        <a href="../personal/join.do" class="btn btn-primary">회원가입</a>
 		        </div>
 			</c:if>
 	    	<c:if test="${sessionScope.id!=null }">
 		        <div class="navbar-nav ms-auto p-4 p-lg-0">
 			        ${sessionScope.name }${sessionScope.isadmin==1?"(관리자)":" 님" }
-			        <a href="../member/logout.do" class="btn btn-primary">로그아웃</a>
+			        <a href="../personal/logout.do" class="btn btn-primary">로그아웃</a>
 		        </div>
 			</c:if>
 	    </div>

@@ -41,14 +41,20 @@ Shadowbox.init({
     players:['iframe']
 })
 function login(){
+	Shadowbox.init()
     Shadowbox.open({
-        content:'../member/login.do',
+        content:'../personal/login.do',
         player:'iframe',
+        width:420,
+        height:300,
+/* login_old.jsp 용
         width:380,
         height:290,
+ */     
         title:'로그인'
     })	
 }
+/*
 $(function(){
 	//document.getElementById('login').addEventListener("click", function() {
 	$('#msgbar').text("");
@@ -95,14 +101,15 @@ $(function(){
 	        })
 		}
 	})
-/* 	$('#logout').click(function(){
+ 	$('#logout').click(function(){
 		location.href="../member/logout.do"
 	})
 	$('#signup').click(function(){
 		location.href="../member/join.do"
 	})
- */
+
 })
+ */
 </script>
 <body>
     <div class="container-xxl bg-white p-0">
