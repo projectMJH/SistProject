@@ -4,10 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JobEntry 프로젝트</title>
-<script type="text/javascript">
-location.href="main/main.do"
-</script>
+<title>Insert title here</title>
 </head>
 <body>
 

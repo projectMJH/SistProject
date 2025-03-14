@@ -6,12 +6,11 @@
       WHERE email=#{email}
   </select>
   <insert id="officialInsert" parameterType="OfficialVO">
-      <selectKey keyProperty="id" resultType="String" order="BEFORE">
-        SELECT 'p' || official_list_seq.NEXTVAL FROM DUAL
+      <selectKey keyProperty="cid" resultType="String" order="BEFORE">
+        SELECT 'c' || official_list_seq.NEXTVAL FROM DUAL
       </selectKey>
-      INSERT INTO official (id,pw,email,name,sex,phone,birth,addr1,addr2,isadmin) VALUES(
-          #{id},#{pw},#{email},#{name},#{sex},#{phone},#{birth},
-          #{addr1},#{addr2},0
+      INSERT INTO official (cid,pw,email,name,cname,phone,brnumber) VALUES(
+          #{cid},#{pw},#{email},#{name},#{cname},#{phone},#{brnumber}
       )
   </insert>
   <!-- 로그인 -->
@@ -20,7 +19,7 @@
       WHERE email=#{email} 
   </select>
   <select id="officialGetPassword" resultType="OfficialVO" parameterType="string">
-      SELECT id,pw,name,sex,isadmin
+      SELECT cid,pw,name,state,access_key
       FROM official
       WHERE email=#{email}
   </select></mapper> 

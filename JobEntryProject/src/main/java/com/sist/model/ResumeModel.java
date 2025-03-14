@@ -11,7 +11,8 @@ public class ResumeModel {
 	@RequestMapping("resume/resume.do")
 	public String main_resume(HttpServletRequest request,HttpServletResponse response)
 	{
-		request.setAttribute("main_jsp", "../resume/resume.jsp");
+		request.setAttribute("my_jsp", "../resume/resume.jsp");
+		request.setAttribute("main_jsp", "../mypage/my_main.jsp");
 		return "../main/main.jsp";
 	}
 }

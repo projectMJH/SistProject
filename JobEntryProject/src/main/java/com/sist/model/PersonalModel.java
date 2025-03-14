@@ -16,14 +16,14 @@ public class PersonalModel {
 	@RequestMapping("personal/join.do")
 	public String personal_join(HttpServletRequest request,HttpServletResponse response)
 	{
-		request.setAttribute("main_jsp","../personal/join.jsp");
+		request.setAttribute("main_jsp","../member/join.jsp");
 		return "../main/main.jsp";
 	}
 	@RequestMapping("personal/emailcheck.do") 
 	public String personal_emailcheck(HttpServletRequest request,HttpServletResponse response)
 	{
 		// include
-		return "../personal/emailcheck.jsp";
+		return "../member/emailcheck.jsp";
 	}
 	@RequestMapping("personal/emailcheck_ok.do")
 	public void personal_idcheck_ok(HttpServletRequest request,HttpServletResponse response)
@@ -71,7 +71,7 @@ public class PersonalModel {
 	@RequestMapping("personal/login.do") 
 	public String personal_login(HttpServletRequest request,HttpServletResponse response) 
 	{
-		return "../personal/login.jsp";
+		return "../member/login.jsp";
 	}
 	@RequestMapping("personal/login_ok.do")
 	public void personal_login_ok(HttpServletRequest request,HttpServletResponse response)

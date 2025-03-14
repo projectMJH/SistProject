@@ -11,7 +11,7 @@
 
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-	    <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+	    <a href="../main/main.do" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
 	        <h1 class="m-0 text-primary">JobEntry</h1>
 	    </a>
 	    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -32,26 +32,17 @@
 	            <div class="nav-item dropdown">
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">기업</a>
 	                <div class="dropdown-menu rounded-0 m-0">
-	                    <a href="../company/com_find.do" class="dropdown-item">기업 목록</a>
+	                    <a href="../company/com_list.do" class="dropdown-item">기업 목록</a>
 	                    <a href="../company/com_find.do" class="dropdown-item">기업 검색</a>
 	                </div>
 	            </div>
-	            <div class="nav-item dropdown">
+	             <div class="nav-item dropdown">
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">커뮤니티</a>
 	                <div class="dropdown-menu rounded-0 m-0">
 	                    <a href="#" class="dropdown-item">자유게시판</a>
 	                    <a href="#" class="dropdown-item">묻고답하기</a>
-	                    <a href="#" class="dropdown-item">인터뷰</a>
-	                </div>
-	            </div>
-	            <div class="nav-item dropdown">
-	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
-	                <div class="dropdown-menu rounded-0 m-0">
-	                    <a href="#l" class="dropdown-item">My</a>
-	                    <a href="#l" class="dropdown-item">계정</a>
-	                    <a href="#l" class="dropdown-item">리뷰</a>
-	                    <a href="../resume/resume.do" class="dropdown-item">이력서</a>
-	                    <a href="#l" class="dropdown-item">멤버십/결제</a>
+	                    <a href="../interview/interview_list.do" class="dropdown-item">인터뷰</a>
+	                    <a href="../interview/interview_find.do" class="dropdown-item">인터뷰 찾기</a>
 	                </div>
 	            </div>
 	            <div class="nav-item dropdown">
@@ -62,6 +53,19 @@
 	                    <a href="#" class="dropdown-item">지원자</a>
 	                </div>
 	            </div>
+	            <c:if test="${sessionScope.id!=null and sessionScope.isadmin==0 }">
+	            <div class="nav-item dropdown">
+	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
+	                <div class="dropdown-menu rounded-0 m-0">
+	                    <a href="#l" class="dropdown-item">My</a>
+	                    <a href="#l" class="dropdown-item">계정</a>
+	                    <a href="#l" class="dropdown-item">리뷰</a>
+	                    <a href="../resume/resume.do" class="dropdown-item">이력서</a>
+	                    <a href="#l" class="dropdown-item">멤버십/결제</a>
+	                </div>
+	            </div>
+	            </c:if>
+	            <c:if test="${sessionScope.id!=null and sessionScope.isadmin==1 }">
 	            <div class="nav-item dropdown">
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">관리자페이지</a>
 	                <div class="dropdown-menu rounded-0 m-0">
@@ -70,6 +74,7 @@
 	                    <a href="" class="dropdown-item"></a>
 	                </div>
 	            </div>
+	            </c:if>
 	            <div class="nav-item dropdown">
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">샘플페이지</a>
 	                <div class="dropdown-menu rounded-0 m-0">
@@ -83,21 +88,23 @@
 	                </div>
 	            </div>
 	        </div>
-<!-- 
-	        <div id="sign" class="d-lg-block" style="width: 200px;display: flex;flex-direction: row; gap: 5px;">
- -->
- 		  	<c:if test="${sessionScope.id==null }">
-		        <div id="sign" class="navbar-nav ms-auto p-4 p-lg-0">
-			        <a href="javascript:login()" class="btn btn-primary">로그인</a>
-			        <a href="../personal/join.do" class="btn btn-primary">회원가입</a>
-		        </div>
-			</c:if>
-	    	<c:if test="${sessionScope.id!=null }">
-		        <div class="navbar-nav ms-auto p-4 p-lg-0">
-			        ${sessionScope.name }${sessionScope.isadmin==1?"(관리자)":" 님" }
-			        <a href="../personal/logout.do" class="btn btn-primary">로그아웃</a>
-		        </div>
-			</c:if>
+	        <div id="sign" class="d-lg-block">
+	 		  	<c:if test="${sessionScope.email==null }">
+			        <div id="sign" class="navbar-nav ms-auto p-4 p-lg-0">
+				        <a href="javascript:login()" class="btn btn-primary px-4 d-flex align-items-center">로그인</a>
+				        <a href="../personal/join.do" class="btn btn-primary px-4 d-flex align-items-center">회원가입</a>
+			        </div>
+				</c:if>
+		    	<c:if test="${sessionScope.email!=null }">
+			        <div class="navbar-nav ms-auto p-4 p-lg-0 d-flex align-items-center">
+				        <div class="btn btn-outline-primary text-center me-3 px-3 py-2">
+			                <span class="d-block fw-bold"><b>${sessionScope.name}</b></span>
+			                <span class="d-block small text-muted">${sessionScope.isadmin==1 ? "(관리자)" : "님"}</span>
+			            </div>
+				        <a href="../personal/logout.do" class="btn btn-primary px-4 d-flex align-items-center">로그아웃</a>
+			        </div>
+				</c:if>
+		    </div>
 	    </div>
 	</nav>
 	<!-- Navbar End -->

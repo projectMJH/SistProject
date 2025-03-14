@@ -8,7 +8,10 @@
 <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
+	let memberStr=''
     $(function(){
+    	memberStr=parent.getMemberStr()
+    	//alert('parent.getMemberStr():'+memberStr)
     	$('#checkBtn').click(function(){
     		let email=$('#email').val()
     		if(email.trim()==="")
@@ -18,7 +21,7 @@
   			}
     		$.ajax({
     			type:'post',
-    			url:'../member/emailcheck_ok.do',
+    			url:'../'+memberStr+'/emailcheck_ok.do',
     			data:{"email":email.trim()},
     			success:function(result)
     			{
@@ -29,7 +32,7 @@
     					$('#oktr').show()
     					$('#res').html(
     					  '<span style="color:blue">'	
-    					  +email+'는(은) 사용가능한 아이디입니다</span>'
+    					  +email+'는(은) 사용가능한 이메일입니다</span>'
     					)
     					$('#email').prop('disabled',true)
     				}	
@@ -38,7 +41,7 @@
                         $('#oktr').show()
                         $('#res').html(
                           '<span style="color:blue">'   
-                          +email+'는(은) 이미 사용중인 아이디입니다</span>'
+                          +email+'는(은) 이미 사용중인 이메일입니다</span>'
                         )
                         $('#email').val("")
                         $('#email').focus()
@@ -48,7 +51,14 @@
     		})
     	})
     	$('#ok').click(function(){
-    		parent.frm.email.value=$('#email').val()
+    		if(memberStr==='personal')
+    		{
+    			parent.frm_pr.email_pr.value=$('#email').val()
+    		}
+    		if(memberStr==='official')
+    		{
+    			parent.frm_co.email_co.value=$('#email').val()
+    		}
     		parent.Shadowbox.close()
     	})
     })

@@ -9,7 +9,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
-<title>Insert title here</title>
+<title>JobEntry 프로젝트_by Moon</title>
 <link rel="stylesheet" href="../shadow/css/shadowbox.css">
 
 <!-- Favicon -->
@@ -47,69 +47,9 @@ function login(){
         player:'iframe',
         width:420,
         height:300,
-/* login_old.jsp 용
-        width:380,
-        height:290,
- */     
         title:'로그인'
     })	
 }
-/*
-$(function(){
-	//document.getElementById('login').addEventListener("click", function() {
-	$('#msgbar').text("");
-	$('#login').on("click", function() { 	
- 		//let id=document.getElementById('id').value.trim();
-		//let pwd=document.getElementById('pwd').value.trim();
- 		let email=$('#email').val().trim();
-		let pw=$('#pw').val().trim();
-		if(email!=="") 
-		{
-			if(pw==="")
-			{
-				$('#msgbar').text("비밀번호를 입력하세요");
-				//document.getElementById('pw').focus()
-				$('#pw').focus()
-				return
-			}
-			
-	        $.ajax({
-	        	type:'post',
-	        	url:'../member/login_ok.do',
-	        	data:{"email":email,"pw":pw},
-	        	success:function(result){
-	        		// NOID, NOPWD, OK
-	        		if(result==='NOID')
-	        		{
-	        			$('#msgbar').text("아이디가 존재하지 않습니다")
-	        			$('#email').val("")
-	        			$('#pw').val("")
-	        			$('#email').focus()
-	        		}	
-	        		else if(result==='NOPWD')
-	        		{
-	        			$('#msgbar').text("비밀번호가 틀립니다")
-	                    $('#pw').val("")
-	                    $('#pw').focus()
-	        		}	
-	        		else
-	        		{
-	                    parent.location.href="../main/main.do"
-	        			parent.Shadowbox.close()
-	        		}	
-	        	}
-	        })
-		}
-	})
- 	$('#logout').click(function(){
-		location.href="../member/logout.do"
-	})
-	$('#signup').click(function(){
-		location.href="../member/join.do"
-	})
-
-})
- */
 </script>
 <body>
     <div class="container-xxl bg-white p-0">

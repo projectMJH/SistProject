@@ -6,16 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>사람인 로그인</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 <!-- Bootstrap CSS
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.login').click(function(){
-		let email = $(this).closest('div').find('input[name="email"]').val();  // 이메일
+        let activeTab=$('#loginTabs .nav-link.active').attr('data-bs-target'); // 현재 활성화된 탭
+        let email=$(activeTab).find('input[name="email"]').val(); // 이메일
 		if(email.trim()==="")
 		{
 			$('#msg').html("&nbsp;<i class='bi bi-exclamation-triangle'></i>&nbsp;이메일을 입력하세요")
@@ -23,7 +27,7 @@ $(function(){
 			return
 		}	
 		
-	    let pw = $(this).closest('div').find('input[name="pw"]').val();  // 비밀번호
+        let pw = $(activeTab).find('input[name="pw"]').val(); // 비밀번호
 	    if(pw.trim()==="")
 	    {
 			$('#msg').html("&nbsp;<i class='bi bi-exclamation-triangle'></i>&nbsp;비밀번호를 입력하세요")
@@ -31,9 +35,8 @@ $(function(){
 	        return
 	    }   
 	    
-		let gubun=$(this).attr('gubun')
-		let url=(gubun === 'p') ? '../personal/login_ok.do' : (gubun === 'c') ? '../official/login_ok.do' : '';
-	    $.ajax({
+		let url = (activeTab === '#personalTab') ? '../personal/login_ok.do' : '../official/login_ok.do';
+		$.ajax({
 	    	type:'post',
 	    	url:url,
 	    	data:{"email":email,"pw":pw},
@@ -60,6 +63,17 @@ $(function(){
 	    	}
 	    })
 	})
+	// Bootstrap 탭 전환 이벤트 감지
+    $(document).on('shown.bs.tab','#loginTabs',function () {
+        // 모든 비밀번호 필드를 초기화
+        $('.password').each(function () {
+            $(this).val(''); // 비밀번호 필드 초기화
+            $(this).attr('type', 'password'); // 타입을 "password"로 설정
+        });
+
+        // 아이콘 초기화 (눈 모양 아이콘을 "fa-eye-slash"로 설정)
+        $('.togglePassword i').removeClass('fa-eye').addClass('fa-eye-slash');
+    });
     // 비밀번호 보이기/숨기기
     $(document).on('click','.togglePassword',function() {
         let input = $(this).closest(".input-group").find(".password");
@@ -72,7 +86,7 @@ $(function(){
 </head>
 <body>
 
-            
+              <div style="margin: 5px;">
                 <!-- 탭 메뉴 -->
                 <ul class="nav nav-tabs" id="loginTabs">
                     <li class="nav-item">
@@ -94,10 +108,10 @@ $(function(){
                             <div class="mb-3 input-group">
                                 <input type="password" name="pw" class="form-control password" placeholder="비밀번호를 입력하세요...">
                                 <button class="btn btn-outline-secondary togglePassword" type="button">
-                                    <i class="fas fa-eye"></i>
+                                    <i class="fas fa-eye-slash"></i>
                                 </button>
                             </div>
-                            <button id=personal type="button" class="login btn btn-primary w-100" gubun='p'>로그인</button>
+                            <button type="button" class="login btn btn-primary w-100">로그인</button>
                     </div>
 
                     <!-- 기업회원 -->
@@ -109,15 +123,13 @@ $(function(){
                             <div class="mb-3 input-group">
                                 <input type="password" name="pw" class="form-control password" placeholder="비밀번호를 입력하세요...">
                                 <button class="btn btn-outline-secondary togglePassword" type="button">
-                                    <i class="fas fa-eye"></i>
+                                    <i class="fas fa-eye-slash"></i>
                                 </button>
                             </div>
-                            <button type="submit" class="login btn btn-primary w-100" gubun='c'>로그인</button>
+                            <button type="button" class="login btn btn-primary w-100">로그인</button>
                     </div>
                 </div>
  	            <div id="msg" style="color:red"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+ 	          </div>  
 </body>
 </html>

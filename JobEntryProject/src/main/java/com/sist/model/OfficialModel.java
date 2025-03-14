@@ -13,17 +13,11 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class OfficialModel {
-	@RequestMapping("official/join.do")
-	public String official_join(HttpServletRequest request,HttpServletResponse response)
-	{
-		request.setAttribute("main_jsp","../official/join.jsp");
-		return "../main/main.jsp";
-	}
 	@RequestMapping("official/emailcheck.do") 
 	public String official_emailcheck(HttpServletRequest request,HttpServletResponse response)
 	{
 		// include
-		return "../official/emailcheck.jsp";
+		return "../member/emailcheck.jsp";
 	}
 	@RequestMapping("official/emailcheck_ok.do")
 	public void official_idcheck_ok(HttpServletRequest request,HttpServletResponse response)
@@ -50,12 +44,18 @@ public class OfficialModel {
 		String email=request.getParameter("email");
 		String phone1=request.getParameter("phone1");
 		String phone2=request.getParameter("phone2");
+		String cname=request.getParameter("cname");
+		String brnumber1=request.getParameter("brnumber1");
+		String brnumber2=request.getParameter("brnumber2");
+		String brnumber3=request.getParameter("brnumber3");
 		
 		OfficialVO vo=new OfficialVO();
 		vo.setPw(pw);
 		vo.setName(name);
 		vo.setEmail(email);
 		vo.setPhone(phone1+"-"+phone2);
+		vo.setCname(cname);
+		vo.setBrnumber(brnumber1+"-"+brnumber2+"-"+brnumber3);
 		OfficialDAO.officialInsert(vo);
 				
 		return "redirect:../main/main.do";
@@ -63,7 +63,7 @@ public class OfficialModel {
 	@RequestMapping("official/login.do") 
 	public String official_login(HttpServletRequest request,HttpServletResponse response) 
 	{
-		return "../official/login.jsp";
+		return "../member/login.jsp";
 	}
 	@RequestMapping("official/login_ok.do")
 	public void official_login_ok(HttpServletRequest request,HttpServletResponse response)
@@ -74,7 +74,7 @@ public class OfficialModel {
 		if(vo.getMsg().equals("OK"))
 		{
 			HttpSession session=request.getSession();
-			session.setAttribute("cid", vo.getCid());
+			session.setAttribute("cid", vo.getCid()); 
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("email", email);
 			session.setAttribute("state", vo.getState());
