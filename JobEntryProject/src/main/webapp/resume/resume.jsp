@@ -17,7 +17,7 @@ $(document).ready(function(){
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <strong>년/월 ~ 년/월</strong> 
-                        <button class="btn btn-sm btn-danger removeCareer">삭제</button>
+                        <button class="btn btn-sm btn-outline-danger removeCareer"><i class="bi bi-trash me-2 fs-6"></i>삭제</button>
                     </div>
                     <input type="text" class="form-control mt-2" placeholder="기업명 입력">
                     <input type="text" class="form-control mt-2" placeholder="부서">
@@ -58,7 +58,7 @@ $(document).ready(function(){
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <strong>입학년도 ~ 졸업년도</strong> 
-                        <button class="btn btn-sm btn-danger removeEducation">삭제</button>
+                        <button class="btn btn-sm btn-outline-danger removeEducation"><i class="bi bi-trash me-2 fs-6"></i>삭제</button>
                     </div>
                     <input type="text" class="form-control mt-2" placeholder="학교명 입력">
                     <input type="text" class="form-control mt-2" placeholder="전공">
@@ -162,22 +162,21 @@ $(document).ready(function(){
 	    <div id="careerContainer">
 	        <!-- 경력 입력 폼이 추가될 위치 -->
 	    </div>
-	
 	    <button id="addCareer" class="btn btn-link text-primary mt-2">+ 추가</button>        
-	    </div>
-	            
-	    <div class="card shadow-sm">
-	        <div class="card-header bg-light">
-	            <h5>학력 사항</h5>
-	        </div>
-	        <div class="card-body">
-	            <p>이곳에 추가적인 정보나 내용들을 배치할 수 있습니다. 예를 들어 이력서 내용이나, 관심사 등을 포함할 수 있습니다.</p>
-	        </div>
-	            <div id="educationContainer">
-        <!-- 학력 입력 폼이 추가될 위치 -->
-     <button id="addEducation" class="btn btn-link text-primary mt-2">+ 추가</button>
     </div>
+	            
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <h5>학력 사항</h5>
+        </div>
+        <div class="card-body">
+            <p>이곳에 추가적인 정보나 내용들을 배치할 수 있습니다. 예를 들어 이력서 내용이나, 관심사 등을 포함할 수 있습니다.</p>
+        </div>
+        <div id="educationContainer">
+        <!-- 학력 입력 폼이 추가될 위치 -->
 	    </div>
+	    <button id="addEducation" class="btn btn-link text-primary mt-2">+ 추가</button>
+    </div>
         
 		
     <!-- / main body -->

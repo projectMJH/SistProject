@@ -7,6 +7,21 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.sist.vo.*;
 import com.sist.commons.*;
 public class PersonalDAO {
+/*
+  		SqlSession session=null;
+		try
+		{
+			session=ssf.openSession();
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(session!=null)
+				session.close();
+		}
+ */
 	private static SqlSessionFactory ssf;
 	static
 	{
@@ -49,6 +64,32 @@ public class PersonalDAO {
 		}
 		
 		session.close();
+		return vo;
+	}
+	/*
+  <select id="personalGetInfo" resultType="PersonalVO" parameterType="string">
+      SELECT phone,addr1,addr2,birth
+      FROM personal
+      WHERE email=#{email}
+  </select>	
+	 */
+	public static PersonalVO personalGetInfo(String id)
+	{
+		SqlSession session=null;
+		PersonalVO vo=null;
+		try
+		{
+			session=ssf.openSession();
+			vo=session.selectOne("personalGetInfo",id);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(session!=null)
+				session.close();
+		}
 		return vo;
 	}
 }

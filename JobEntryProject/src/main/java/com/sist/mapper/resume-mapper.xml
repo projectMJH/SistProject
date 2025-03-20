@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.resume-mapper">
+	<select id="resumeInsert" parameterType="com.sist.vo.ResumeVO">
+		INSERT INTO resume VALUES(
+		resume_rno_seq.nextval,#{id},#{name},#{email},#{phone},#{birth},
+		#{disclosure},#{scholar},#{skill},#{carreer},#{self_intro},#{title}
+		)
+	</select>
+	<update id="resumeUpdate" parameterType="com.sist.vo.ResumeVO">
+		UPDATE resume SET
+		id=#{id},name=#{name},email=#{email},phone=#{phone},birth=#{birth},
+		disclosure=#{disclosure},scholar=#{scholar},skill=#{skill},
+		carreer=#{carreer},self_intro=#{self_intro},title=#{title}
+	</update>
+</mapper>

@@ -30,7 +30,7 @@
           <a class="nav-link" href="#">리뷰</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">이력서</a>
+          <a class="nav-link" href="..resume/resume_detail.do">이력서</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">멤버십/결제</a>

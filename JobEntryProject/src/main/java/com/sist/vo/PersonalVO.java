@@ -21,5 +21,7 @@ ISADMIN            NOT NULL NUMBER
 import lombok.Data;
 @Data
 public class PersonalVO {
-	private String id,pw,email,name,sex,birth,addr1,addr2,phone,isadmin,msg;
+	private int isadmin;
+	private String id,pw,email,name,sex,birth,addr1,addr2,phone,poster;
+	private String msg;
 }
