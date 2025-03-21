@@ -46,10 +46,13 @@ public class PersonalModel {
 	public String personal_join_ok(HttpServletRequest request,HttpServletResponse response)
 	{
 		String pw=request.getParameter("pw");
+		String email=request.getParameter("email");
 		String name=request.getParameter("name");
+		String poster=request.getParameter("poster");
+		if(poster==null)
+			poster="";
 		String sex=request.getParameter("sex");
 		String birth=request.getParameter("birth");
-		String email=request.getParameter("email");
 		String addr1=request.getParameter("addr1");
 		String addr2=request.getParameter("addr2");
 		String phone1=request.getParameter("phone1");
@@ -58,6 +61,7 @@ public class PersonalModel {
 		PersonalVO vo=new PersonalVO();
 		vo.setPw(pw);
 		vo.setName(name);
+		vo.setPoster(poster);
 		vo.setSex(sex);
 		vo.setBirth(birth);
 		vo.setEmail(email);

@@ -20,8 +20,8 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String userId = request.getParameter("userId");
-        if (userId == null || userId.isEmpty()) {
+        String fileName = request.getParameter("fileName");
+        if (fileName == null || fileName.isEmpty()) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
@@ -35,10 +35,10 @@ public class UploadServlet extends HttpServlet {
         }
 
         for (Part part : request.getParts()) {
-            String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString();
-            System.out.println("FileTestProject>fileName: "+fileName);
-            if (fileName != null && !fileName.isEmpty()) {
-                String filePath = uploadPath + File.separator + userId + ".jpg"; // 사용자 ID로 저장
+            String realName = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+            System.out.println("JobEntryProject>fileName: "+realName);
+            if (realName != null && !realName.isEmpty()) {
+                String filePath = uploadPath + File.separator + fileName; // 파일이름으로 저장
                 part.write(filePath);
                 response.setStatus(HttpServletResponse.SC_OK);
                 return;

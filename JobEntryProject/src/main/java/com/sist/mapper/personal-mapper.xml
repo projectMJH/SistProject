@@ -14,8 +14,8 @@
       <selectKey keyProperty="id" resultType="String" order="BEFORE">
         SELECT 'p' || personal_list_seq.NEXTVAL FROM DUAL
       </selectKey>
-      INSERT INTO personal (id,pw,email,name,sex,phone,birth,addr1,addr2,isadmin) VALUES(
-          #{id},#{pw},#{email},#{name},#{sex},#{phone},#{birth},
+      INSERT INTO personal (id,pw,email,name,poster,sex,phone,birth,addr1,addr2,isadmin) VALUES(
+          #{id},#{pw},#{email},#{name},#{poster},#{sex},#{phone},#{birth},
           #{addr1},#{addr2},0
       )
   </insert>

@@ -10,7 +10,8 @@
     File userImage = new File(uploadDir, userId + ".jpg");
 
     // 이미지 URL 설정
-    String imageUrl = userImage.exists() ? "c:\\uploads/" + userId + ".jpg" : "default-icon.png";
+    //String imageUrl = userImage.exists() ? "c:\\uploads/" + userId + ".jpg" : "default-icon.jpg";
+    String imageUrl = userImage.exists() ? "image.jsp?userId=" + userId : "default-icon.jpg";
 
     // JSP 변수 → EL로 변환
     request.setAttribute("userId", userId);
@@ -44,7 +45,7 @@
                     processData: false,
                     success: function() {
                         alert("업로드 성공!");
-                        $("#profileImage").attr("src", "c:\\uploads/${userId}.jpg?" + new Date().getTime()); // 캐싱 방지
+                        $("#profileImage").attr("src", "image.jsp?userId=${userId}&t="+new Date().getTime());
                     },
                     error: function() {
                         alert("업로드 실패!");
@@ -58,7 +59,7 @@
     <h2>프로필 사진</h2>
 
     <!-- 프로필 사진 or 기본 아이콘 -->
-    <img id="profileImage" src="${imageUrl}" alt="Profile Image" width="150" height="150" style="border-radius: 50%; cursor: pointer;">
+    <img id="profileImage" src="image.jsp?userId=${userId}" alt="Profile Image" width="150" height="150">
 
     <input type="file" id="fileInput" accept="image/*" style="display: none;">
 </body>

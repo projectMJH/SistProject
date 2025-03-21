@@ -15,7 +15,7 @@
     <h2>이력서</h2>
 
     <div>
-        <img id="profile-img" src="../file/image.jsp?userId=testuser" alt="이력서 사진">
+        <img id="profile-img" src="image.jsp?userId=testuser" alt="이력서 사진">
         <form id="uploadForm" enctype="multipart/form-data">
             <input type="file" name="file" id="fileInput" accept="image/*">
             <button type="submit">사진 업로드</button>
@@ -30,22 +30,18 @@
                 formData.append("userId", "testuser"); // 실제 사용자 ID
 
                 $.ajax({
-                    url: "../UploadServlet",  
+                    url: "UploadServlet",  
                     type: "POST",
                     data: formData,
                     contentType: false,
                     processData: false,
                     success: function(response) {
                         alert(response);
-                        $("#profile-img").attr("src", "../file/image.jsp?userId=testuser&t=" + new Date().getTime());
+                        $("#profile-img").attr("src", "image.jsp?userId=testuser&rand=" + new Date().getTime());
                     },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                    	alert("업로드 실패")
-                        console.log("AJAX 요청 실패!");
-                        console.log("상태 코드: " + jqXHR.status); // HTTP 상태 코드 (예: 404, 500)
-                        console.log("응답 텍스트: " + jqXHR.responseText); // 서버에서 반환한 오류 메시지
-                        console.log("에러 내용: " + errorThrown); // 예외 정보
-                        alert("업로드 실패! 오류 코드: " + jqXHR.status);                    }
+                    error: function() {
+                        alert("파일 업로드 실패!");
+                    }
                 });
             });
         });

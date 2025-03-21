@@ -1,14 +1,13 @@
-<%@ page import="java.io.*" %>
+<%@ page import="java.io.*, jakarta.servlet.*" %>
 <%
-    String userId = request.getParameter("userId");
+    String fileName = request.getParameter("fileName");
     String uploadPath = "C:/uploads";
     String[] extensions = {".jpg", ".png", ".gif"};
     File imageFile = null;
 
     for (String ext : extensions) {
-        File file = new File(uploadPath, userId + ext);
-        if (file.exists()) {
-            imageFile = file;
+        if (fileName.contains(ext)) {
+            imageFile = new File(uploadPath, fileName);
             response.setContentType("image/" + ext.substring(1));
             break;
         }

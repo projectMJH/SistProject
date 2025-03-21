@@ -84,6 +84,43 @@ $(function(){
         
         $('#frm_pr').submit()
 	})
+	
+    const imageUpload = document.getElementById("imageUpload");
+    const uploadLabel = document.getElementById("uploadLabel");
+
+    imageUpload.addEventListener("change", function(event) {
+        var formData = new FormData();
+        var fileName= $("#imageUpload")[0].files[0].name;
+        formData.append("file", $("#imageUpload")[0].files[0]);
+        formData.append("fileName", fileName); // 파일이름
+
+        $.ajax({
+            url: "../UploadServlet",  
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                $("#uploadLabel").html(
+                        '<img src="../file/image.jsp?fileName='+fileName+'&t=' + new Date().getTime() + '" alt="Uploaded Image" '
+                      + 'style="display: block; max-width: 100%; height: auto;">'
+                      +'<input type="hidden" name="poster" value="'+fileName+'">');            
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("AJAX 요청 실패!");
+                console.error("상태 코드: ", jqXHR.status); // HTTP 상태 코드 (예: 404, 500)
+                console.error("응답 텍스트: ", jqXHR.responseText); // 서버에서 반환한 오류 메시지
+                console.error("에러 내용: ", errorThrown); // 예외 정보
+                alert("업로드 실패! 오류 코드: " + jqXHR.status);
+            }
+        });
+    });
+
+    uploadLabel.addEventListener("click", (event) => {
+    	event.preventDefault(); // 🚀 기본 동작 방지
+        imageUpload.click(); // label이 아닌 직접 실행
+    });
+/* 	
     const imageUpload = document.getElementById("imageUpload");
     const uploadLabel = document.getElementById("uploadLabel");
 
@@ -103,23 +140,67 @@ $(function(){
     	event.preventDefault(); // 🚀 기본 동작 방지
         imageUpload.click(); // label이 아닌 직접 실행
     });
+ 
+	$("#uploadForm").on("submit", function(event) {
+        var formData = new FormData();
+        formData.append("file", $("#fileInput")[0].files[0]);
+        formData.append("userId", "testuser"); // 실제 사용자 ID
+
+        $.ajax({
+            url: "../UploadServlet",  
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                alert(response);
+                $("#profile-img").attr("src", "../file/image.jsp?userId=testuser&t=" + new Date().getTime());
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            	alert("업로드 실패")
+                console.log("AJAX 요청 실패!");
+                console.log("상태 코드: " + jqXHR.status); // HTTP 상태 코드 (예: 404, 500)
+                console.log("응답 텍스트: " + jqXHR.responseText); // 서버에서 반환한 오류 메시지
+                console.log("에러 내용: " + errorThrown); // 예외 정보
+                alert("업로드 실패! 오류 코드: " + jqXHR.status);                    }
+        });
+    }); 
+	 */
 })
 </script>
 </head>
 <body>
       <div class="card p-4 position-relative">
 
-        <!-- 사진 업로드 버튼 -->
+        <!-- 사진 업로드 버튼 
         <div class="profile-container">
             <label for="imageUpload" class="upload-box" id="uploadLabel">
                 <i class="bi bi-image fs-1 text-secondary" id="uploadIcon"></i>
                 <p class="text-secondary mb-0">사진 업로드</p>
                 <small class="text-muted">(선택)</small>
             </label>
-            <input type="file" id="imageUpload" accept="image/*" class="d-none" style="display: none;" >
+            <input type="file" id="imageUpload" name="poster" accept="image/*" class="d-none" style="display: none;" >
         </div>
+		
+	    <div class="profile-container">
+	        <img id="profile-img" src="../file/image.jsp?userId=testuser" alt="이력서 사진">
+	        <form id="uploadForm" enctype="multipart/form-data">
+	            <input type="file" name="file" id="fileInput" accept="image/*">
+	            <button type="submit">사진 업로드</button>
+	        </form>
+	    </div>
+		-->
 
         <form method="post" action="../personal/join_ok.do" name="frm" id="frm_pr">
+        <!-- Poster -->
+
+        <div class="profile-container">
+          <label for="imageUpload" class="upload-box" id="uploadLabel">
+            <img src="../file/default-icon.png" alt="image upload">
+          </label>  
+          <input type="file" id="imageUpload" accept="image/*" class="d-none" style="display: none;" >
+        </div>
+
           <!-- 이메일 -->
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label text-end">이메일</label>
