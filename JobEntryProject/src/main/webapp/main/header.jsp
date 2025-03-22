@@ -12,7 +12,7 @@
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 	    <a href="../main/main.do" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-	        <h1 class="m-0 text-primary">JobEntry</h1>
+	        <h1 class="m-0 text-primary">JobPro</h1>
 	    </a>
 	    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 	        <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">공고</a>
 	                <div class="dropdown-menu rounded-0 m-0">
 	                    <a href="../emp/emp_list.do" class="dropdown-item">공고 목록</a>
-	                    <a href="../emp/emp_find.do" class="dropdown-item">공고 검색</a>
+	                    <a href="../emp/emp_find_home.do" class="dropdown-item">공고 검색</a>
 	                    <a href="#" class="dropdown-item">실시간 공고</a>
 	                </div>
 	            </div>
@@ -39,20 +39,22 @@
 	             <div class="nav-item dropdown">
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">커뮤니티</a>
 	                <div class="dropdown-menu rounded-0 m-0">
-	                    <a href="#" class="dropdown-item">자유게시판</a>
-	                    <a href="#" class="dropdown-item">묻고답하기</a>
+	                   <a href="#" class="dropdown-item">자유게시판</a>
+	                  	<a href="../interview/commune.do" class="dropdown-item">묻고답하기</a>
 	                    <a href="../interview/interview_list.do" class="dropdown-item">인터뷰</a>
 	                    <a href="../interview/interview_find.do" class="dropdown-item">인터뷰 찾기</a>
 	                </div>
 	            </div>
-	            <div class="nav-item dropdown">
-	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">기업페이지</a>
-	                <div class="dropdown-menu rounded-0 m-0">
-	                    <a href="#" class="dropdown-item">MyCompany</a>
-	                    <a href="#" class="dropdown-item">등록한 공고</a>
-	                    <a href="#" class="dropdown-item">지원자</a>
-	                </div>
-	            </div>
+	            <c:if test="${sessionScope.cid!=null }">
+		            <div class="nav-item dropdown">
+		                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">기업페이지</a>
+		                <div class="dropdown-menu rounded-0 m-0">
+		                    <a href="../company/com_main.do" class="dropdown-item">MyCompany</a>
+		                    <a href="#" class="dropdown-item">등록한 공고</a>
+		                    <a href="#" class="dropdown-item">지원자</a>
+		                </div>
+		            </div>
+	            </c:if>
 	            <c:if test="${sessionScope.id!=null and sessionScope.isadmin==0 }">
 	            <div class="nav-item dropdown">
 	                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
@@ -107,7 +109,7 @@
 		    </div>
 	    </div>
 	</nav>
-	<!-- Navbar End -->
+	<!-- Navbar End --> 
 
 <!-- Top Background Image Wrapper 
   <header id="header" class="hoc clear">

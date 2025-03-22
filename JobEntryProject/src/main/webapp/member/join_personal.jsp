@@ -36,6 +36,17 @@
         }
 </style>
 <script type="text/javascript">
+function getTimestamp() 
+{
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = ("0" + (now.getMonth() + 1)).slice(-2); // 월 (0부터 시작하므로 +1)
+    var day = ("0" + now.getDate()).slice(-2);
+    var hours = ("0" + now.getHours()).slice(-2);
+    var minutes = ("0" + now.getMinutes()).slice(-2);
+    var seconds = ("0" + now.getSeconds()).slice(-2);
+    return year + month + day + "_" + hours + minutes + seconds;
+}
 $(function(){
 	$('#postBtn').click(function(){
 		new daum.Postcode({
@@ -90,7 +101,7 @@ $(function(){
 
     imageUpload.addEventListener("change", function(event) {
         var formData = new FormData();
-        var fileName= $("#imageUpload")[0].files[0].name;
+        var fileName= $("#imageUpload")[0].files[0].name+'_'+getTimestamp();
         formData.append("file", $("#imageUpload")[0].files[0]);
         formData.append("fileName", fileName); // 파일이름
 

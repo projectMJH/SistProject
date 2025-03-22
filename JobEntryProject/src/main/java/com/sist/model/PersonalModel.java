@@ -51,6 +51,8 @@ public class PersonalModel {
 		String poster=request.getParameter("poster");
 		if(poster==null)
 			poster="";
+		else
+			poster="c:\\uploads\\"+poster;
 		String sex=request.getParameter("sex");
 		String birth=request.getParameter("birth");
 		String addr1=request.getParameter("addr1");
