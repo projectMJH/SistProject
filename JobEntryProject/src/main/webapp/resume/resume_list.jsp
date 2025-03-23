@@ -62,7 +62,6 @@
         .scroll-right { right: 0; }
         .edit-resume .card-body {cursor: pointer;}
     </style>
-    
 </head>
 <body>
 
@@ -77,6 +76,7 @@
     <!-- 이력서 리스트 -->
     <div style="display: flex; gap: 10px;">
       <!-- 새 이력서 추가 버튼 -->
+      <input type="hidden" class="id" name="id" value="${id }">
       <div class="resume-card card text-center border-dashed p-3" id="addResume">
           <a href="../resume/resume_detail.do" class="text-decoration-none text-dark">
               <div class="card-body">
@@ -85,6 +85,7 @@
           </a>
       </div>
       <div class="resume-container" id="resumeList">
+<%--       
         <!-- 기본 이력서 -->
         <c:forEach var="vo" items="${list }" varStatus="s">
        	<c:if test="${s.index==0 }">
@@ -144,27 +145,116 @@
         </div>
         </c:if>
         </c:forEach>
+ --%>        
       </div>
     </div>
+    
 </div>
 
-<script>
-    $(document).ready(function() {
-
-        // 이력서 추가 기능
-	    $(".edit-resume .card-body").click(function() {
-	        $(this).find(".showDetail").submit()
-	    });
-
-        // 좌우 슬라이드 기능
-        $("#scrollLeft").click(function() {
-            $("#resumeList").animate({ scrollLeft: "-=250px" }, 300);
-        });
-
-        $("#scrollRight").click(function() {
-            $("#resumeList").animate({ scrollLeft: "+=250px" }, 300);
-        });
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    let id=$('.id').first().val()
+    print_page(id);
+/*     
+	$('#findBtn').click(function(){
+	    print_page(1);
+	})
+	$('#ss').keydown(function(e){
+		if(e.keyCode==13)
+		{
+		    print_page(1);
+	    }	
+	})
+ */	
+    // 이력서 추가 기능
+    $(document).on("click", ".edit-resume .card-body", function() {
+        $(this).find(".showDetail").submit();
     });
+
+    // 좌우 슬라이드 기능
+    $("#scrollLeft").click(function() {
+        $("#resumeList").animate({ scrollLeft: "-=250px" }, 300);
+    });
+
+    $("#scrollRight").click(function() {
+        $("#resumeList").animate({ scrollLeft: "+=250px" }, 300);
+    });
+})
+
+function remove_resume(id,rno)
+{
+    $.ajax({
+        type:'post',
+        url:'../resume/resume_delete_ajax.do',
+        data:{"rno":rno},
+        success:function(result){
+        	print_page(id)
+        }
+    })
+}
+
+function print_page(id)
+{
+    $.ajax({
+        type:'post',
+        url:'../resume/resume_list_ajax.do',
+        data:{"id":id},
+        success:function(result){
+            let json=JSON.parse(result)
+            //console.log(json)
+            jsonView(json,id)
+        }
+    })
+}
+function jsonView(json,id)
+{
+    // 이미지 
+    let html=''
+    json.forEach(function(resume, index){
+    	if(index===0)
+    	{
+        	html+='<div class="resume-card card border-primary edit-resume">'
+                +'<div class="card-header bg-primary text-white d-flex justify-content-between">'
+                +'대표 이력서 <span class="badge bg-light text-dark">50%</span>'
+                +'</div>'
+                +'<div class="card-body">'
+                +'<form method=post action="../resume/resume_detail.do" class="showDetail">'
+                +'<h5 class="card-title">'+resume.title+'</h5>'
+                +'<input type="hidden" class="id" name="id" value="'+id+'">'
+                +'<input type="hidden" class="rno" name="rno" value="'+resume.rno+'">'
+                +'</form>'
+                +'</div>'
+                +'</div>'
+    	}
+    	else
+    	{
+    		
+    		html+='<div class="resume-card card edit-resume">'
+            	+'<div class="card-header d-flex justify-content-between">'
+                +'이력서 '+index
+                +'<div class="dropdown">'
+                +'<button class="menu-btn" data-bs-toggle="dropdown">⋮</button>'
+                +'<ul class="dropdown-menu">'
+                +'<li><a class="dropdown-item" href="#">대표 이력서 설정</a></li>'
+                +'<li><a class="dropdown-item text-danger delete-resume" style="cursor: pointer;" onclick="remove_resume(\''+id+'\','+resume.rno+')">삭제</a></li>'
+                +'</ul>'
+                +'</div>'
+            	+'</div>'
+            	+'<div class="card-body">'
+        	    +'<form method=post action="../resume/resume_detail.do" class="showDetail">'
+                +'<h5 class="card-title">'+resume.title+'</h5>'
+                +'<input type="hidden" class="id" name="id" value="'+id+'">'
+                +'<input type="hidden" class="rno" name="rno" value="'+resume.rno+'">'
+				+'</form>'
+    	        +'</div>'
+        		+'</div>'
+    	}
+    })
+    // 페이지
+    $('#resumeList').html(html)
+
+}
 </script>
 
 </body>

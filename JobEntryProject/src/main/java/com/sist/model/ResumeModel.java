@@ -1,14 +1,14 @@
 package com.sist.model;
 
-import com.sist.controller.Controller;
-import com.sist.controller.RequestMapping;
+import com.sist.controller.*;
+import jakarta.servlet.http.*;
+import org.json.simple.*;
+
+import java.io.*;
 import java.util.*;
 import com.sist.dao.*;
 import com.sist.vo.*;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class ResumeModel {
@@ -44,8 +44,8 @@ public class ResumeModel {
 		
 		List<ResumeVO> list=ResumeDAO.resumeListData(id);
 		request.setAttribute("id", id);
-		request.setAttribute("list", list);
-		request.setAttribute("count", count);
+		//request.setAttribute("list", list);
+		//request.setAttribute("count", count);
 		
 		request.setAttribute("my_jsp", "../resume/resume_list.jsp");
 		request.setAttribute("main_jsp", "../mypage/my_main.jsp");
@@ -97,6 +97,13 @@ public class ResumeModel {
 		request.setAttribute("main_jsp", "../mypage/my_main.jsp");
 		return "../main/main.jsp";
 	}
+	@RequestMapping("resume/resume_delete_ajax.do")
+	public void resume_delete(HttpServletRequest request,HttpServletResponse response)
+	{
+		String rno=request.getParameter("rno");
+		ResumeDAO.resumeDelete(Integer.parseInt(rno));
+	}
+/*
 	@RequestMapping("resume/resume_delete.do")
 	public String resume_delete(HttpServletRequest request,HttpServletResponse response)
 	{
@@ -104,6 +111,32 @@ public class ResumeModel {
 		ResumeDAO.resumeDelete(Integer.parseInt(rno));
 		
 		return "redirect:../resume/resume.do";
+	}
+*/
+	@RequestMapping("resume/resume_list_ajax.do")
+	public void resume_list_ajax(HttpServletRequest request,HttpServletResponse response)
+	{
+		String id=request.getParameter("id");
+		List<ResumeVO> list=ResumeDAO.resumeListData(id);
+		
+		//JSON변경
+		JSONArray arr=new JSONArray();
+		for(ResumeVO vo:list)
+		{
+			JSONObject obj=new JSONObject();
+			obj.put("title", vo.getTitle());
+			obj.put("rno", vo.getRno());
+			obj.put("isbasic", String.valueOf(vo.getIsbasic()));
+			arr.add(obj);
+		}
+		
+		// 전송
+		try
+		{
+			response.setContentType("text/plain;charset=UTF-8");
+			PrintWriter out=response.getWriter();
+			out.write(arr.toJSONString());
+		}catch(Exception ex){}
 	}
 /*	
 	@RequestMapping("resume/resume_insert.do")
