@@ -12,6 +12,7 @@ SKILL               CLOB
 CARREER             CLOB          
 SELF_INTRO          CLOB          
 TITLE               VARCHAR2(100) 
+ISBASIC             CHAR(1) 
 
  */
 import java.util.*;
@@ -22,4 +23,5 @@ public class ResumeVO {
 	private int rno;
 	private String id,name,email,phone,birth,disclosure,scholar,skill,carreer,self_intro,title;
 	private String address,sex,poster;
+	private char isbasic;
 }

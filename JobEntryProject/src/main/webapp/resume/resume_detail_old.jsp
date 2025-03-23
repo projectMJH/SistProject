@@ -6,55 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>이력서</title>
-<style type="text/css">
-        .upload-box {
-            width: 150px;
-            height: 200px;
-            border-radius: 15px;
-            background-color: #f8f9fa;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: 2px dashed #dee2e6;
-            transition: all 0.3s ease-in-out;
-            overflow: hidden;
-        }
-        .upload-box:hover {
-            background-color: #e9ecef;
-        }
-        .upload-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-        .profile-container {
-            position: absolute;
-            top: 70px;
-            right: 20px;
-        }
-
-        .input-container {
-            margin-bottom: 1.5rem;
-        }
-        .form-control {
-            border: none; /* Border 없애기 */
-            border-radius: 0.5rem;   /* 둥근 모서리 */
-            padding: 0.5rem;
-            font-size: 1.7rem;
-            background-color: transparent;
-        }
-        .form-label {
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        .form-control:focus {
-            box-shadow: none; /* 포커스시 하이라이트 제거 */
-            border-color: #007bff; /* 포커스 시 파란색 테두리 */
-        }
-</style>
 <script>
 $(document).ready(function(){
     let careerIndex = 0; // 경력 입력 폼의 인덱스
@@ -143,113 +94,20 @@ $(document).ready(function(){
     $(document).on("click", ".select-format", function(){
         $(this).siblings().removeClass("btn-primary btn-secondary btn-success").addClass("btn-outline-primary btn-outline-secondary btn-outline-success");
         $(this).removeClass("btn-outline-primary btn-outline-secondary btn-outline-success").addClass("btn-primary");
-    });  
-    
-    const imageUpload = document.getElementById("imageUpload");
-    const uploadLabel = document.getElementById("uploadLabel");
-
-    imageUpload.addEventListener("change", function(event) {
-        var formData = new FormData();
-        var fileName = $("#id").val()+'_'+$("#imageUpload")[0].files[0].name;
-        formData.append("file", $("#imageUpload")[0].files[0]);
-        formData.append("fileName", fileName); // 파일이름
-
-        $.ajax({
-            url: "../UploadServlet",  
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                $("#uploadLabel").html(
-                        '<img src="../file/image.jsp?fileName='+fileName+'&t=' + new Date().getTime() + '" alt="Uploaded Image" '
-                      + 'style="display: block; max-width: 100%; height: auto;">'
-                      +'<input type="hidden" name="poster" value="'+fileName+'">');            
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error("AJAX 요청 실패!");
-                console.error("상태 코드: ", jqXHR.status); // HTTP 상태 코드 (예: 404, 500)
-                console.error("응답 텍스트: ", jqXHR.responseText); // 서버에서 반환한 오류 메시지
-                console.error("에러 내용: ", errorThrown); // 예외 정보
-                alert("업로드 실패! 오류 코드: " + jqXHR.status);
-            }
-        });
-    });
-
-    uploadLabel.addEventListener("click", (event) => {
-    	event.preventDefault(); // 🚀 기본 동작 방지
-        imageUpload.click(); // label이 아닌 직접 실행
-    });
-    
-	$('#jBtn').click(function(){
-/* 		let email=$('#email_pr').val()
-		if(email.trim()==="")
-		{
-			alert("개인 이메일 중복체크를 해야 됩니다")
-			return
-		}
-		let pwd1=$('#pwd1_pr').val()
-		if(pwd1.trim()==="")
-		{
-			$('#pwd1').focus()
-			return
-		}	
-        let pwd2=$('#pwd2_pr').val()
-		if(pwd1!==pwd2.trim())
-		{
-			alert("입력한 비밀번호가 서로 다릅니다")
-			$('#pwd2_pr').val("")
-			$('#pwd2_pr').focus()
-			return
-		}	
-        let name=$('#name_pr').val()
-        if(name.trim()==="")
-        {
-        	alert("이름을 입력 해야 됩니다")
-            $('#name_pr').focus()
-            return
-        }  
-        let post=$('#post').val()
-        if(post.trim()==="")
-        {
-        	alert("우편번호 검색을 해야 됩니다")
-        	return
-        }	
-        */        
-        $('#frm_resume').submit()
-	})
-
+    });    
 });
 </script> 
 </head>
 <body>
-   <!-- main body -->
-    <!-- 제목 섹션 -->
-    <form method="post" action="../resume/resume_edit.do" id="frm_resume">
-    <div class="card shadow-sm">
-        <div class="card-header bg-light input-container">
-            <label for="name" class="form-label">제목</label>
-            <input type="text" id="title" class="form-control" value="${rvo.title }">
-        </div>
-    </div>
+
+    <!-- main body -->
     <!-- 프로필 섹션 -->
     <div class="card shadow-sm mb-4">
         <div class="card-header bg-light">
-            <h4>${rvo.name }</h4>
+            <h3>${rvo.name }</h3>
         </div>
         <div class="card-body">
             <div class="d-flex justify-content-start">
-		        <div class="profile-container">
-		          <label for="imageUpload" class="upload-box" id="uploadLabel">
-		          	<c:if test="${rvo.poster==null }">
-			            <img src="../file/default-icon.png" alt="image upload">
-		          	</c:if>
-		          	<c:if test="${rvo.poster!=null }">
-			            <img src="../file/image.jsp?fileName=${rvo.poster }" style="display: block; max-width: 100%; height: auto;">
-		          	</c:if>
-		          </label>  
-		          <input type="file" id="imageUpload" accept="image/*" class="d-none" style="display: none;" >
-		        </div>
                 <!-- 왼쪽: 정보 -->
                 <div class="me-4">
                     <p><i class="bi bi-envelope me-2"></i><strong>이메일:&nbsp;&nbsp;</strong>${rvo.email }</p>
@@ -265,9 +123,78 @@ $(document).ready(function(){
                     <p><i class="bi bi-calendar me-2"></i><strong>생년월일:&nbsp;&nbsp;</strong>${rvo.birth }</p>
                     <p><i class="bi bi-house-door me-2"></i><strong>주소:&nbsp;&nbsp;</strong>${rvo.address }</p>
                 </div>
+                <!-- 오른쪽: 사진
+                <div class="ms-auto text-center">
+                  <label for="profileUpload" class="position-relative d-inline-block">
+                  	<c:if test="${rvo.poster!=null }">
+					<img id="profileImage" src="../resume/moon.png" alt="Profile Image"
+			            class="img-fluid shadow border border-2" 
+			            style="width: 150px; height: 200px; object-fit: cover; border-radius: 15px;">
+			        </c:if>
+        			<!-- 이미지가 없을 경우 아이콘 표시 -->    
+                  	<c:if test="${rvo.poster==null }">
+				        <i id="defaultIcon" class="bi bi-image text-secondary fs-1"></i> 
+				        <input type="file" id="imageUpload" accept="image/*" class="d-none">   
+			        </c:if>
+			      </label>      
+                </div>
+                 -->
+                
+                <div class="ms-auto text-center">
+				    <label for="profileUpload" class="position-relative d-inline-block">
+				        <!-- 이미지 미리보기 -->
+				        <img id="profileImage" src="../resume/moon.pn" alt="Profile Image"
+				            class="img-fluid shadow border border-2" 
+				            style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px;">
+				
+				        <!-- 이미지가 없을 경우 아이콘 표시 -->
+				        <i id="defaultIcon" class="bi bi-person-circle text-secondary fs-1 position-absolute top-50 start-50 translate-middle"
+				            style="display: none;"></i> 이미지 없음
+				    </label>
+				    
+				    <!-- 파일 업로드 input -->
+				    <input type="file" id="profileUpload" accept="image/*" class="d-none">
+				</div>
             </div>
         </div>
     </div>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const profileUpload = document.getElementById("profileUpload");
+    const profileImage = document.getElementById("profileImage");
+    const defaultIcon = document.getElementById("defaultIcon");
+
+    // 이미지가 없을 경우 기본 아이콘 표시
+    if (!profileImage.src || profileImage.src.includes("moon.png") === false) {
+        profileImage.style.display = "none";
+        defaultIcon.style.display = "block";
+    }
+
+    // 파일 선택 시 이미지 미리보기
+    profileUpload.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profileImage.src = e.target.result;
+                profileImage.style.display = "block";
+                defaultIcon.style.display = "none"; // 기본 아이콘 숨김
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // 클릭 시 파일 업로드 창 열기
+    profileImage.addEventListener("click", () => profileUpload.click());
+    defaultIcon.addEventListener("click", () => profileUpload.click());
+});
+</script>
+    
+    
+    
+    
+    
 
     <!-- 추가 내용 예시 -->
     <div class="card shadow-sm mb-3">
@@ -311,7 +238,7 @@ $(document).ready(function(){
 	    <button id="addCareer" class="btn btn-link text-primary mt-2">+ 추가</button>        
     </div>
 	            
-    <div class="card shadow-sm mb-2">
+    <div class="card shadow-sm">
         <div class="card-header bg-light">
             <h5>학력 사항</h5>
         </div>
@@ -323,24 +250,6 @@ $(document).ready(function(){
 	    </div>
 	    <button id="addEducation" class="btn btn-link text-primary mt-2">+ 추가</button>
     </div>
-    <!-- hidden field -->
-	<input type="hidden" id="id" name="id" value="${rvo.id }" >
-	<input type="hidden" id="rno" name="rno" value="${rvo.rno }" >
-	<input type="hidden" id="name" name="name" value="${rvo.name }" >
-	<input type="hidden" id="email" name="email" value="${rvo.email }" >
-	<input type="hidden" id="phone" name="phone" value="${rvo.phone }" >
-	<input type="hidden" id="birth" name="birth" value="${rvo.birth }" >
-	<input type="hidden" id="scholar" name="scholar" value="${rvo.scholar }" >
-	<input type="hidden" id="skill" name="skill" value="${rvo.skill }" >
-	<input type="hidden" id="carreer" name="carreer" value="${rvo.carreer }" >
-	<input type="hidden" id="self_intro" name="self_intro" value="${rvo.self_intro }" >
-    <input type="hidden" name="isbasic" value="${rvo.isbasic}">
-    <!-- 버튼 -->
-    <div class="text-center">
-      <button type="button" class="btn btn-outline-success" id="jBtn">등록</button>
-      <button type="button" class="btn btn-outline-secondary" onclick="history.back()">취소</button>
-    </div>
-    </form>
         
 		
     <!-- / main body -->

@@ -62,7 +62,7 @@
 	                    <a href="#l" class="dropdown-item">My</a>
 	                    <a href="#l" class="dropdown-item">계정</a>
 	                    <a href="#l" class="dropdown-item">리뷰</a>
-	                    <a href="../resume/resume_detail.do" class="dropdown-item">이력서</a>
+	                    <a href="../resume/resume.do" class="dropdown-item">이력서</a>
 	                    <a href="#l" class="dropdown-item">멤버십/결제</a>
 	                </div>
 	            </div>

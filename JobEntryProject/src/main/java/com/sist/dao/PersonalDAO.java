@@ -92,4 +92,21 @@ public class PersonalDAO {
 		}
 		return vo;
 	}
+	public static void personalPosterUpdate(PersonalVO vo)
+	{
+		SqlSession session=null;
+		try
+		{
+			session=ssf.openSession();
+			session.update("personalPosterUpdate",vo);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(session!=null)
+				session.close();
+		}
+	}
 }

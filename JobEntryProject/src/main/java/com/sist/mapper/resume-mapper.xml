@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.mapper.resume-mapper">
+	<select id="resumeListData" resultType="ResumeVO" parameterType="string">
+		SELECT rno,title,isbasic FROM resume 
+		WHERE id=#{id} ORDER BY isbasic DESC, rno ASC 
+	</select>
+	<select id="resumeDetailData" resultType="ResumeVO" parameterType="int">
+		SELECT * FROM resume WHERE rno=#{rno}
+	</select>
 	<select id="resumeInsert" parameterType="com.sist.vo.ResumeVO">
-		INSERT INTO resume VALUES(
-		resume_rno_seq.nextval,#{id},#{name},#{email},#{phone},#{birth},
-		#{disclosure},#{scholar},#{skill},#{carreer},#{self_intro},#{title}
-		)
+		INSERT INTO resume(rno,id,name,email,phone,birth,isbasic) 
+		VALUES(resume_rno_seq.nextval,#{id},#{name},#{email},#{phone},
+				#{birth},#{isbasic})
+	</select>
+	<select id="resumeCount" resultType="int" parameterType="string">
+		SELECT COUNT(*) FROM resume WHERE id=#{id}
 	</select>
 	<update id="resumeUpdate" parameterType="com.sist.vo.ResumeVO">
 		UPDATE resume SET
 		id=#{id},name=#{name},email=#{email},phone=#{phone},birth=#{birth},
-		disclosure=#{disclosure},scholar=#{scholar},skill=#{skill},
-		carreer=#{carreer},self_intro=#{self_intro},title=#{title}
+		scholar=#{scholar},skill=#{skill},
+		carreer=#{carreer},self_intro=#{self_intro},title=#{title},isbasic=#{isbasic}
+		WHERE rno=#{rno}
+	</update>
+	<update id="resumeDelete" parameterType="int">
+		DELETE resume 
+		WHERE rno=#{rno}
 	</update>
 </mapper>
