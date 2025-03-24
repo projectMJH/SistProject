@@ -43,7 +43,7 @@
             border: none; /* Border 없애기 */
             border-radius: 0.5rem;   /* 둥근 모서리 */
             padding: 0.5rem;
-            font-size: 1.7rem;
+            font-size: 1.1rem;
             background-color: transparent;
         }
         .form-label {
@@ -54,6 +54,12 @@
             box-shadow: none; /* 포커스시 하이라이트 제거 */
             border-color: #007bff; /* 포커스 시 파란색 테두리 */
         }
+        .flex-align {
+		    display: flex;
+		    align-items: center; /* 아이콘과 텍스트 수직 정렬 */
+		    gap: 8px; /* 아이콘과 텍스트 사이 간격 */
+		    min-width: 200px; /* 최소 너비 설정 */
+		}
 </style>
 <script>
 $(document).ready(function(){
@@ -182,40 +188,7 @@ $(document).ready(function(){
     });
     
 	$('#jBtn').click(function(){
-/* 		let email=$('#email_pr').val()
-		if(email.trim()==="")
-		{
-			alert("개인 이메일 중복체크를 해야 됩니다")
-			return
-		}
-		let pwd1=$('#pwd1_pr').val()
-		if(pwd1.trim()==="")
-		{
-			$('#pwd1').focus()
-			return
-		}	
-        let pwd2=$('#pwd2_pr').val()
-		if(pwd1!==pwd2.trim())
-		{
-			alert("입력한 비밀번호가 서로 다릅니다")
-			$('#pwd2_pr').val("")
-			$('#pwd2_pr').focus()
-			return
-		}	
-        let name=$('#name_pr').val()
-        if(name.trim()==="")
-        {
-        	alert("이름을 입력 해야 됩니다")
-            $('#name_pr').focus()
-            return
-        }  
-        let post=$('#post').val()
-        if(post.trim()==="")
-        {
-        	alert("우편번호 검색을 해야 됩니다")
-        	return
-        }	
-        */        
+  
         $('#frm_resume').submit()
 	})
 
@@ -229,7 +202,7 @@ $(document).ready(function(){
     <div class="card shadow-sm">
         <div class="card-header bg-light input-container">
             <label for="name" class="form-label">제목</label>
-            <input type="text" id="title" class="form-control" value="${rvo.title }">
+            <input type="text" name="title" class="form-control" value="${rvo.title }" style="font-size: 1.7rem;">
         </div>
     </div>
     <!-- 프로필 섹션 -->
@@ -252,18 +225,26 @@ $(document).ready(function(){
 		        </div>
                 <!-- 왼쪽: 정보 -->
                 <div class="me-4">
-                    <p><i class="bi bi-envelope me-2"></i><strong>이메일:&nbsp;&nbsp;</strong>${rvo.email }</p>
-                    <p><i class="bi bi-telephone me-2"></i><strong>전화번호:&nbsp;&nbsp;</strong>${rvo.phone }</p>
+                    <p class="flex-align" width=150px><i class="bi bi-envelope"></i><strong>이메일:&nbsp;&nbsp;</strong>
+                    <input type="text" name="email" class="form-control" value="${rvo.email }">
+                    </p>
+                    <p class="flex-align" width=150px><i class="bi bi-telephone"></i><strong>전화번호:&nbsp;&nbsp;</strong>
+                    <input type="text" name="phone" class="form-control" value="${rvo.phone }">
+                    </p>
 				    <p><i class="bi 
 					        <c:choose>
 					            <c:when test="${rvo.sex == '여자'}">bi-gender-female</c:when>
 					            <c:otherwise>bi-gender-male</c:otherwise>
 					        </c:choose> 
-					    	me-1">
+					    	">
 					   </i><strong>성별:&nbsp;&nbsp;</strong>${rvo.sex }
 				    </p>
-                    <p><i class="bi bi-calendar me-2"></i><strong>생년월일:&nbsp;&nbsp;</strong>${rvo.birth }</p>
-                    <p><i class="bi bi-house-door me-2"></i><strong>주소:&nbsp;&nbsp;</strong>${rvo.address }</p>
+                    <p class="flex-align" width=150px><i class="bi bi-calendar"></i><strong>생년월일:&nbsp;&nbsp;</strong>
+                    <input type="text" name="birth" class="form-control" value="${rvo.birth }">
+                    </p>
+                    <p class="flex-align" width=150px><i class="bi bi-house-door"></i><strong>주소:&nbsp;&nbsp;</strong>
+                    <input type="text" name="address" class="form-control" value="${rvo.address }">
+                    </p>
                 </div>
             </div>
         </div>
@@ -327,12 +308,9 @@ $(document).ready(function(){
 	<input type="hidden" id="id" name="id" value="${rvo.id }" >
 	<input type="hidden" id="rno" name="rno" value="${rvo.rno }" >
 	<input type="hidden" id="name" name="name" value="${rvo.name }" >
-	<input type="hidden" id="email" name="email" value="${rvo.email }" >
-	<input type="hidden" id="phone" name="phone" value="${rvo.phone }" >
-	<input type="hidden" id="birth" name="birth" value="${rvo.birth }" >
 	<input type="hidden" id="scholar" name="scholar" value="${rvo.scholar }" >
 	<input type="hidden" id="skill" name="skill" value="${rvo.skill }" >
-	<input type="hidden" id="carreer" name="carreer" value="${rvo.carreer }" >
+	<input type="hidden" id="career" name="career" value="${rvo.career }" >
 	<input type="hidden" id="self_intro" name="self_intro" value="${rvo.self_intro }" >
     <input type="hidden" name="isbasic" value="${rvo.isbasic}">
     <!-- 버튼 -->

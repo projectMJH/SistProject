@@ -190,27 +190,30 @@ public class ResumeModel {
 		String birth=request.getParameter("birth");
 		String scholar=request.getParameter("scholar");
 		String skill=request.getParameter("skill");
-		String carreer=request.getParameter("carreer");
+		String career=request.getParameter("career");
 		String self_intro=request.getParameter("self_intro");
 		String title=request.getParameter("title");
-			if(title==null)
+			if(title==null||title.trim().length()==0)
 				title="제목 없음";	
 		String isbasic=request.getParameter("isbasic");
 		String poster=request.getParameter("poster");
 		String rno=request.getParameter("rno");
-		System.out.println("JobEntryProject>ResumeModel>rno"+rno);
+		System.out.println("JobEntryProject>ResumeModel>rno: "+rno);
+		System.out.println("JobEntryProject>ResumeModel>id: "+id);
+		System.out.println("JobEntryProject>ResumeModel>name: "+name);
+		System.out.println("JobEntryProject>ResumeModel>title: "+title);
 			
 		ResumeVO vo=new ResumeVO();
-		vo.setId(id);
+		vo.setRno(Integer.parseInt(rno));
 		vo.setName(name==null?"":name);
 		vo.setEmail(email==null?"":email);
 		vo.setPhone(phone==null?"":phone);
 		vo.setBirth(birth==null?"":birth);
 		vo.setScholar(scholar==null?"":scholar);
 		vo.setSkill(skill==null?"":skill);
-		vo.setCarreer(carreer==null?"":carreer);
+		vo.setCareer(career==null?"":career);
 		vo.setSelf_intro(self_intro==null?"":self_intro);
-		vo.setTitle(title==null?"":title);
+		vo.setTitle(title==null?"제목 없음":title);
 		vo.setIsbasic(isbasic.charAt(0));
 		vo.setPoster(poster);
 		
@@ -225,4 +228,20 @@ public class ResumeModel {
 		
 		return "redirect:../resume/resume.do";
 	}
+	@RequestMapping("resume/resume_basic_ajax.do")
+	public void resume_basic_ajax(HttpServletRequest request,HttpServletResponse response)
+	{
+		String id=request.getParameter("id");
+		String rno=request.getParameter("rno");
+		
+		int basicRno=ResumeDAO.resumeFindBasic(id);
+		ResumeVO vo=new ResumeVO();
+		vo.setRno(basicRno);
+		vo.setIsbasic('n');
+		ResumeDAO.resumeBasicChange(vo);
+		vo.setRno(Integer.parseInt(rno));
+		vo.setIsbasic('y');
+		ResumeDAO.resumeBasicChange(vo);
+	}
+	
 }

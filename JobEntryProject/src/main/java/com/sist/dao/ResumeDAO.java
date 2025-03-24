@@ -148,4 +148,41 @@ public class ResumeDAO {
 		}	
 		return count;
 	}
+	public static int resumeFindBasic(String id)
+	{
+		SqlSession session=null;
+		int rno=0;
+		try
+		{
+			session=ssf.openSession();
+			rno=session.selectOne("resumeFindBasic",id);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(session!=null)
+				session.close();
+		}	
+		return rno;
+	}
+	public static void resumeBasicChange(ResumeVO vo)
+	{
+		SqlSession session=null;
+		try
+		{
+			session=ssf.openSession(true);
+			session.update("resumeBasicChange",vo);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(session!=null)
+				session.close();
+		}		
+	}
+	
 }
