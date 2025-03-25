@@ -223,13 +223,11 @@ $(document).ready(function(){
 		          </label>  
 		          <input type="file" id="imageUpload" accept="image/*" class="d-none" style="display: none;" >
 		        </div>
-                <!-- 왼쪽: 정보 -->
+                <!-- 왼쪽: 정보 
                 <div class="me-4">
-                    <p class="flex-align" width=150px><i class="bi bi-envelope"></i><strong>이메일:&nbsp;&nbsp;</strong>
-                    <input type="text" name="email" class="form-control" value="${rvo.email }">
+                    <p class="flex-align"><span class="col-sm-3"><i class="bi bi-envelope">&nbsp;</i><strong>이메일:&nbsp;&nbsp;</strong></span>
                     </p>
-                    <p class="flex-align" width=150px><i class="bi bi-telephone"></i><strong>전화번호:&nbsp;&nbsp;</strong>
-                    <input type="text" name="phone" class="form-control" value="${rvo.phone }">
+                    <p class="flex-align"><i class="bi bi-telephone"></i>&nbsp;<strong>전화번호:&nbsp;&nbsp;</strong>
                     </p>
 				    <p><i class="bi 
 					        <c:choose>
@@ -239,18 +237,33 @@ $(document).ready(function(){
 					    	">
 					   </i><strong>성별:&nbsp;&nbsp;</strong>${rvo.sex }
 				    </p>
-                    <p class="flex-align" width=150px><i class="bi bi-calendar"></i><strong>생년월일:&nbsp;&nbsp;</strong>
-                    <input type="text" name="birth" class="form-control" value="${rvo.birth }">
+                    <p class="flex-align"><i class="bi bi-calendar"></i>&nbsp;<strong>생년월일:&nbsp;&nbsp;</strong>
                     </p>
-                    <p class="flex-align" width=150px><i class="bi bi-house-door"></i><strong>주소:&nbsp;&nbsp;</strong>
-                    <input type="text" name="address" class="form-control" value="${rvo.address }">
+                    <p class="flex-align"><i class="bi bi-house-door"></i><strong>주소:&nbsp;&nbsp;</strong>
+                    ${rvo.address }
                     </p>
                 </div>
+-->
+                 <!-- 왼쪽: 정보 -->
+                 <div class="me-4">
+                     <p><i class="bi bi-envelope me-2"></i><strong>이메일:&nbsp;&nbsp;</strong>${rvo.email }</p>
+                     <p><i class="bi bi-telephone me-2"></i><strong>전화번호:&nbsp;&nbsp;</strong>${rvo.phone }</p>
+ 				    <p><i class="bi 
+ 					        <c:choose>
+ 					            <c:when test="${rvo.sex == '여자'}">bi-gender-female</c:when>
+ 					            <c:otherwise>bi-gender-male</c:otherwise>
+ 					        </c:choose> 
+ 					    	me-1">
+ 					   </i><strong>성별:&nbsp;&nbsp;</strong>${rvo.sex }
+ 				    </p>
+                     <p><i class="bi bi-calendar me-2"></i><strong>생년월일:&nbsp;&nbsp;</strong>${rvo.birth }</p>
+                     <p><i class="bi bi-house-door me-2"></i><strong>주소:&nbsp;&nbsp;</strong>${rvo.address }</p>
+                 </div>                
             </div>
         </div>
     </div>
 
-    <!-- 추가 내용 예시 -->
+    <!-- 스킬 입력 
     <div class="card shadow-sm mb-3">
         <div class="card-header bg-light">
             <h5>직종/스킬</h5>
@@ -259,7 +272,7 @@ $(document).ready(function(){
             <p>이곳에 추가적인 정보나 내용들을 배치할 수 있습니다. 예를 들어 이력서 내용이나, 관심사 등을 포함할 수 있습니다.</p>
         </div>
     </div>
-            
+    -->         
     <div class="card shadow-sm mb-3">
         <div class="card-header bg-light">
             <h5>경력 사항</h5>
@@ -308,6 +321,9 @@ $(document).ready(function(){
 	<input type="hidden" id="id" name="id" value="${rvo.id }" >
 	<input type="hidden" id="rno" name="rno" value="${rvo.rno }" >
 	<input type="hidden" id="name" name="name" value="${rvo.name }" >
+    <input type="hidden" id="email" name="email" value="${rvo.email }">
+    <input type="hidden" id="phone" name="phone" value="${rvo.phone }">
+    <input type="hidden" id="birth" name="birth" value="${rvo.birth }">
 	<input type="hidden" id="scholar" name="scholar" value="${rvo.scholar }" >
 	<input type="hidden" id="skill" name="skill" value="${rvo.skill }" >
 	<input type="hidden" id="career" name="career" value="${rvo.career }" >

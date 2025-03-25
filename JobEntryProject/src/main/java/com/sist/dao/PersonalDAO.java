@@ -109,4 +109,15 @@ public class PersonalDAO {
 				session.close();
 		}
 	}
+	public static void personalInsertSeeker(SeekerVO vo) {
+		SqlSession session=ssf.openSession(true);
+		session.insert("personalInsertSeeker",vo);
+		session.close();
+	}
+	public static int personalSeekerCheck(SeekerVO vo) {
+		SqlSession session=ssf.openSession();
+		int check=session.selectOne("personalSeekerCheck",vo);
+		session.close();
+		return check;
+	}
 }

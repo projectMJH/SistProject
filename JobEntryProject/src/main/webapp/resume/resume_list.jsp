@@ -259,7 +259,7 @@ function jsonView(json,id)
     	{
         	html+='<div class="resume-card card border-primary edit-resume">'
                 +'<div class="card-header bg-primary text-white d-flex justify-content-between">'
-                +'대표 이력서 <span class="badge bg-light text-dark">50%</span>'
+                +'대표 이력서'
                 +'</div>'
                 +'<div class="card-body">'
                 +'<h5 class="card-title">'+resume.title+'</h5>'
