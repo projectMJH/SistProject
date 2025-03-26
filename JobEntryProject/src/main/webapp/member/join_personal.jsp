@@ -101,9 +101,13 @@ $(function(){
 
     imageUpload.addEventListener("change", function(event) {
         var formData = new FormData();
-        var fileName= $("#imageUpload")[0].files[0].name+'_'+getTimestamp();
+        var fileName=$("#imageUpload")[0].files[0].name
+        //alert(fileName)
+        var newName=fileName.substring(0, fileName.lastIndexOf("."))+'_'+getTimestamp()+fileName.substring(fileName.lastIndexOf(".")) 
+        //alert(newName)
+        //var fileName= $("#imageUpload")[0].files[0].name+'_'+getTimestamp();
         formData.append("file", $("#imageUpload")[0].files[0]);
-        formData.append("fileName", fileName); // 파일이름
+        formData.append("fileName", newName); // 파일이름
 
         $.ajax({
             url: "../UploadServlet",  
@@ -113,9 +117,9 @@ $(function(){
             processData: false,
             success: function(response) {
                 $("#uploadLabel").html(
-                        '<img src="../file/image.jsp?fileName='+fileName+'&t=' + new Date().getTime() + '" alt="Uploaded Image" '
+                        '<img src="../file/image.jsp?fileName='+newName+'&t=' + new Date().getTime() + '" alt="Uploaded Image" '
                       + 'style="display: block; max-width: 100%; height: auto;">'
-                      +'<input type="hidden" name="poster" value="'+fileName+'">');            
+                      +'<input type="hidden" name="poster" value="'+newName+'">');            
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error("AJAX 요청 실패!");
@@ -126,11 +130,12 @@ $(function(){
             }
         });
     });
-
+/*
     uploadLabel.addEventListener("click", (event) => {
     	event.preventDefault(); // 🚀 기본 동작 방지
         imageUpload.click(); // label이 아닌 직접 실행
     });
+*/   
 })
 </script>
 </head>

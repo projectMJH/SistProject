@@ -56,45 +56,45 @@ $(function(){
 </script>
 </head>
 <body>
-        <!-- Header Start -->
-        <div class="container-xxl py-5 bg-dark page-header mb-5">
-            <div class="container my-5 pt-5 pb-4">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">회원가입</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb text-uppercase">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">회원가입</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <!-- Header End -->
+	<!-- Header Start -->
+	<div class="container-xxl py-5 bg-dark page-header mb-5">
+	    <div class="container my-5 pt-5 pb-4">
+	        <h1 class="display-3 text-white mb-3 animated slideInDown">회원가입</h1>
+	        <nav aria-label="breadcrumb">
+	            <ol class="breadcrumb text-uppercase">
+	                <li class="breadcrumb-item"><a href="#">Home</a></li>
+	                <li class="breadcrumb-item text-white active" aria-current="page">회원가입</li>
+	            </ol>
+	        </nav>
+	    </div>
+	</div>
+	<!-- Header End -->
         
-<div style="margin: 100px;">
-  <!-- 탭 메뉴 -->
-
-  <ul class="nav nav-tabs" id="loginTabs">
-      <li class="nav-item">
-          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#personal">개인회원</button>
-      </li>
-      <li class="nav-item">
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#official">기업회원</button>
-      </li>
-  </ul>
-
-  <!-- 로그인 폼 -->
-  <div class="tab-content mt-3" style="width: 800px">
-    <!-- 개인회원 -->
-    <div class="tab-pane fade show active" id="personal">
-	  <jsp:include page="../member/join_personal.jsp"/>
-    </div>
-      
-	  <!-- 기업회원 -->
-    <div class="tab-pane fade" id="official">
-	  <jsp:include page="../member/join_official.jsp"/>
-    </div>
-  </div>
-</div>
+	<div style="margin: 100px;">
+	  <!-- 탭 메뉴 -->
+	
+	  <ul class="nav nav-tabs" id="loginTabs">
+	      <li class="nav-item">
+	          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#personal">개인회원</button>
+	      </li>
+	      <li class="nav-item">
+	          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#official">기업회원</button>
+	      </li>
+	  </ul>
+	
+	  <!-- 로그인 폼 -->
+	  <div class="tab-content mt-3" style="width: 800px">
+	    <!-- 개인회원 -->
+	    <div class="tab-pane fade show active" id="personal">
+		  <jsp:include page="../member/join_personal.jsp"/>
+	    </div>
+	      
+		  <!-- 기업회원 -->
+	    <div class="tab-pane fade" id="official">
+		  <jsp:include page="../member/join_official.jsp"/>
+	    </div>
+	  </div>
+	</div>
 
 </body>
 </html>

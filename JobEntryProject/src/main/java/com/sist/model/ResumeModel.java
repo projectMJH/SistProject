@@ -37,6 +37,7 @@ public class ResumeModel {
 			rvo.setAddress(addr1+" "+addr2);
 			rvo.setBirth(birth);
 			rvo.setPoster(poster);
+			rvo.setTitle("제목 없음");
 			rvo.setIsbasic('y');
 			
 			ResumeDAO.resumeInsert(rvo);

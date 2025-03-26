@@ -66,7 +66,8 @@ $(document).ready(function(){
     let careerIndex = 0; // 경력 입력 폼의 인덱스
 
     // 경력 추가 버튼 클릭 시
-    $("#addCareer").click(function(){
+//    $("#addCareer").click(function(){
+    $(document).on("click", "#addCareer", function(){
         careerIndex++;
         let careerForm = `
             <div class="card shadow-sm mb-3 career-entry" data-index="${careerIndex}">
@@ -107,7 +108,8 @@ $(document).ready(function(){
     let educationIndex = 0; // 학력 입력 폼의 인덱스
 
     // 학력 추가 버튼 클릭 시
-    $("#addEducation").click(function(){
+//    $("#addEducation").click(function(){
+    $(document).on("click", "#addEducation", function(){
         educationIndex++;
         let educationForm = `
             <div class="card shadow-sm mb-3 education-entry" data-index="${educationIndex}">
@@ -154,7 +156,8 @@ $(document).ready(function(){
     const imageUpload = document.getElementById("imageUpload");
     const uploadLabel = document.getElementById("uploadLabel");
 
-    imageUpload.addEventListener("change", function(event) {
+//    imageUpload.addEventListener("change", function(event) {
+    $(document).on("change", "#imageUpload", function(event){
         var formData = new FormData();
         var fileName = $("#id").val()+'_'+$("#imageUpload")[0].files[0].name;
         formData.append("file", $("#imageUpload")[0].files[0]);
@@ -182,13 +185,15 @@ $(document).ready(function(){
         });
     });
 
-    uploadLabel.addEventListener("click", (event) => {
+//    uploadLabel.addEventListener("click", (event) => {
+/*
+    $(document).on("click", "#uploadLabel", function(event){
     	event.preventDefault(); // 🚀 기본 동작 방지
         imageUpload.click(); // label이 아닌 직접 실행
     });
-    
-	$('#jBtn').click(function(){
-  
+*/   
+//	$('#jBtn').click(function(){
+    $(document).on("click", "#jBtn", function(){
         $('#frm_resume').submit()
 	})
 
@@ -317,6 +322,7 @@ $(document).ready(function(){
 	    </div>
 	    <button id="addEducation" class="btn btn-link text-primary mt-2">+ 추가</button>
     </div>
+    
     <!-- hidden field -->
 	<input type="hidden" id="id" name="id" value="${rvo.id }" >
 	<input type="hidden" id="rno" name="rno" value="${rvo.rno }" >
@@ -335,8 +341,6 @@ $(document).ready(function(){
       <button type="button" class="btn btn-outline-secondary" onclick="history.back()">취소</button>
     </div>
     </form>
-        
-		
-    <!-- / main body -->
+
 </body>
 </html>
